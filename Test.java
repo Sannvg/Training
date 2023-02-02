@@ -1,16 +1,18 @@
-package com.obsqura.training.arraylist;
+package com.obsqura.seleniumpgms;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<String> arrlist = new ArrayList<String>();
-		arrlist.add("A");
-		Collections.sort(arrlist);
-		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.booking.com");
+		driver.manage().window().maximize();
+		driver.findElement(By.linkText("Flights")).click();
+		driver.findElement(By.cssSelector("input[placeholder='Where to?']")).click();
 	}
 
 }
