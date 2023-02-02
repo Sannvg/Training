@@ -1,36 +1,34 @@
-package com.obsqura.training.instancemethods;
+package com.obsqura.training.staticmethods;
 
 import java.util.Scanner;
 
 public class Palindrome {
-	int rem=0,sum=0;
-	public int revNum(int n){
+	int temp;
+	public static int numReverse(int n){
+		int sum = 0, rem=0;
 		while(n>0){
 			rem = n%10;
 			sum = sum*10 + rem;
-			n = n/10;
-		}
+			n = n/10;}
 		return sum;
 	}
-	public void palCheck(int nm, int rnum){
-		if(nm==rnum)
-			System.out.print(nm+" is a palindrome number");
+	public static void chkPalindrome(int nm, int tnum){
+		if(tnum==nm)
+			System.out.println(tnum+ " is palindrome");
 		else
-			System.out.print(nm+" is not a palindrome number");
+			System.out.print(tnum+ " is not a palindrome number");
+		
 	}
-
-	public static void main(String[] args) {// to find a number is palindrome or not
-		Palindrome p = new Palindrome();
+	public static void main(String args[]){
 		Scanner sc = new Scanner(System.in);
-
-		int temp, num, rvnum;
-
+		
+		int num,rvnum,temp;
 		System.out.print("Enter the number: ");
 		num = sc.nextInt();
 		temp = num;
-		rvnum = p.revNum(num);
-		p.palCheck(temp,rvnum);
+		rvnum = Palindrome.numReverse(num);
+		System.out.println("Reversed Number is: "+rvnum);
+		Palindrome.chkPalindrome(rvnum,temp);
 		sc.close();
 	}
-
 }

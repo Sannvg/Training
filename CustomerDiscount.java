@@ -1,9 +1,10 @@
-package com.obsqura.training.instancemethods;
+package com.obsqura.training.staticmethods;
 
 import java.util.Scanner;
 
 public class CustomerDiscount {
-	public void disAmt(double tot)
+
+	public static void disAmt(double tot)
 	{
 		double dc = 0;
 		if(tot>=5000)
@@ -16,10 +17,7 @@ public class CustomerDiscount {
 		else
 			System.out.print("No discount");
 	}
-
-	public static void main(String[] args) {
-		// to avail customer discount 
-		CustomerDiscount cd = new CustomerDiscount();
+	public static void main(String args[]){
 		Scanner sc = new Scanner(System.in);
 		int icnt;
 		double tamt =0;
@@ -34,8 +32,7 @@ public class CustomerDiscount {
 		for(int j=0;j<aritm.length;j++)	
 			tamt = tamt + aritm[j];	
 		System.out.println("Total Amount: " +tamt);
-		cd.disAmt(tamt);
+		CustomerDiscount.disAmt(tamt);
 		sc.close();
 	}
-
 }

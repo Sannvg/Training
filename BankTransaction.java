@@ -1,40 +1,37 @@
-package com.obsqura.training.instancemethods;
+package com.obsqura.training.staticmethods;
 
 import java.util.Scanner;
 
 public class BankTransaction {
-	int cb = 0;
-	public void checkCB(){
+
+	static int cb = 0;
+	public static void checkCB(){
 		System.out.println("Current Balance:" +cb);
 	}
-	public int depAmt(int dp){
+	public static int depAmt(int dp){
 		cb = cb + dp;
 		return cb;		
 	}
-	public int wdAmt(int wd){
+	public static int wdAmt(int wd){
 		cb = cb-wd;
 		return cb;
 	}
-
-	public static void main(String[] args) {
-		// To deposit, withdraw and calculate the deposit
-		BankTransaction bk = new BankTransaction();
+	public static void main(String args[]){
 		Scanner sc = new Scanner(System.in);
 		int dp, wd;		
 		System.out.print("Enter the amount to deposit:");
 		dp = sc.nextInt();
-		bk.depAmt(dp);
+		BankTransaction.depAmt(dp);
 		System.out.println("Amount deposited");		
 		System.out.print("Enter the amount to withdraw:");
 		wd = sc.nextInt();
-		if(wd>bk.cb)
+		if(wd>cb)
 			System.out.println("Insufficient Balance");
 		else{
-			bk.wdAmt(wd);
+			BankTransaction.wdAmt(wd);
 			System.out.println("Amount withdrawn");}
-		bk.checkCB();
+		BankTransaction.checkCB();
 		sc.close();
-
 	}
 
 }
