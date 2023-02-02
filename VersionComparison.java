@@ -1,4 +1,5 @@
-package com.obsqura.seleniumpgms;
+package com.obsqura.testingtraining.demo;
+
 import java.util.Scanner;
 
 public class VersionComparison {
@@ -54,6 +55,7 @@ public class VersionComparison {
 			System.out.println("Entered Version is same");
 		}
 		sc.close();
-	}		
+	}
+		
 }
 
