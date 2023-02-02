@@ -1,18 +1,16 @@
-package com.obsqura.training.inheritance;
+package com.obsqura.training.interfaces;
 
-public class Rectangle {
-	float l,b;
-	public Rectangle(float l, float b) {
-		super();
-		this.l = l;
-		this.b = b;		
+public class Rectangle implements Polygon {
+
+	@Override
+	public void getArea(int l, int b) {
+		// TODO Auto-generated method stub
+		int area = l*b;
+		System.out.println("Area of Rectangle:"+area);
 	}
-	void areaRec() {
-		float area = l*b;
-		System.out.println("Area of rectangle: "+area);		
-	}
-	void perimeterRec() {
-		float pm = 2*(l+b);		
-		System.out.println("Perimeter of rectangle: "+pm);
+	
+	public static void main(String[] args) {
+		Rectangle r = new Rectangle();
+		r.getArea(3, 7);
 	}
 }
