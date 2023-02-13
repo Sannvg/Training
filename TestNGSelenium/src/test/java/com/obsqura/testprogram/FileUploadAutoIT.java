@@ -16,8 +16,8 @@ public class FileUploadAutoIT {
 		driver.manage().window().maximize();
 		driver.findElement(By.cssSelector("span[class='browse-text']")).click();
 		Runtime.getRuntime().exec("C:\\Users\\Thomas\\Documents\\Test.exe");
-		Thread.sleep(2000);
-		driver.close();
+		//Thread.sleep(2000);
+		//driver.close();
 	}
 
 }
