@@ -14,10 +14,10 @@ public class FileUploadRobotClass {
 
 	public static void main(String[] args) throws AWTException, InterruptedException {
 		// TODO Auto-generated method stub
-		WebDriver driver= new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.foundit.in/seeker/registration");
 		driver.manage().window().maximize();
-		
+
 		driver.findElement(By.cssSelector("span[class='browse-text']")).click();
 		Robot rb = new Robot();
 		StringSelection str = new StringSelection("C:\\Users\\Thomas\\Desktop\\Testing Notes.docx");
