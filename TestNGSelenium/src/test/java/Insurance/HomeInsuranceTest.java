@@ -5,23 +5,23 @@ import org.testng.annotations.Test;
 public class HomeInsuranceTest {
 	// @BeforeTest,@AfterTest,@Test,@BeforeMethod,@AfterMethod,priority
 		
-		@Test(enabled = false)
+		@Test(enabled = false)//enabled will skip the testcase
 		public void homeInsuranceWebLogin() {
 			
 			System.out.println("HomeInsurance WebLogin");
 		}
 
-		@Test
+		@Test(priority=1)
 		public void homeInsuranceWebLogout() {
 			System.out.println("HomeInsurance WebLogout");
 		}
 
-		@Test
+		@Test(priority =0)
 		public void mobileInsuranceWebLogin() {
 			System.out.println("HomeMobileInsurance WebLogin");
 		}
 
-		@Test
+		@Test(priority =3)
 		public void mobileInsuranceWebLogout() {
 			System.out.println("HomeMobileInsurance WebLogout");
 		}
