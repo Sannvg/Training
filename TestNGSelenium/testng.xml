@@ -4,8 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="Insurance.DogInsuranceTest"/>
-      <class name="Insurance.HomeInsuranceTest"/>
-      <class name="com.obsqura.testprogram.FileUploadDownload"/>
+      <class name="Insurance.HomeInsuranceTest"/>     
       <class name="Insurance.VehicleInsuranceTest"/>
       <class name="Insurance.LifeInsuranceTest"/>
       <class name="com.obsqura.testprogram.TestProgram"/>
