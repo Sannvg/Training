@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <test thread-count="5" verbose="0" name="Test(failed)">
+    <classes>
+      <class name="Insurance.LifeInsuranceTest">
+        <methods>
+          <include name="mobileInsuranceWebLogout"/>
+          <include name="homeInsuranceWebLogout"/>
+          <include name="mobileInsuranceWebLogin"/>
+          <include name="lifeInsuranceWebLogin"/>
+        </methods>
+      </class> <!-- Insurance.LifeInsuranceTest -->
+      <class name="Insurance.HomeInsuranceTest">
+        <methods>
+          <include name="mobileInsuranceWebLogout"/>
+          <include name="mobileInsuranceWebLogin"/>
+          <include name="homeInsuranceWebLogout"/>
+        </methods>
+      </class> <!-- Insurance.HomeInsuranceTest -->
+      <class name="Insurance.DogInsuranceTest">
+        <methods>
+          <include name="mobileInsuranceWebLogin"/>
+          <include name="dogInsuranceWebLogout"/>
+          <include name="mobileInsuranceWebLogout"/>
+          <include name="dogInsuranceWebLogin"/>
+        </methods>
+      </class> <!-- Insurance.DogInsuranceTest -->
+      <class name="Insurance.VehicleInsuranceTest">
+        <methods>
+          <include name="mobileInsuranceWebLogout"/>
+          <include name="vehicleInsuranceWebLogout"/>
+          <include name="vehicleInsuranceWebLogin"/>
+          <include name="mobileInsuranceWebLogin"/>
+        </methods>
+      </class> <!-- Insurance.VehicleInsuranceTest -->
+      <class name="com.obsqura.testprogram.TestProgram">
+        <methods>
+          <include name="simpleFormDemo"/>
+          <include name="Browserclose"/>
+          <include name="Browser"/>
+        </methods>
+      </class> <!-- com.obsqura.testprogram.TestProgram -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

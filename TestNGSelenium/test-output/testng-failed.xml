@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Insurance.TestNGDataProvider">
+      <class name="com.obsqura.testprogram.TestLivePjt">
         <methods>
-          <include name="browserclose"/>
-          <include name="swaglabs" invocation-numbers="1"/>
-          <include name="browserload"/>
+          <include name="getStore"/>
+          <include name="tearDown"/>
+          <include name="loadBrowser"/>
         </methods>
-      </class> <!-- Insurance.TestNGDataProvider -->
+      </class> <!-- com.obsqura.testprogram.TestLivePjt -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
