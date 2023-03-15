@@ -21,7 +21,6 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.POS.BaseClass.BaseClass;
 
 public class Action extends BaseClass {
@@ -275,8 +274,7 @@ public class Action extends BaseClass {
 			executor.executeScript("arguments[0].click();", ele);
 			// driver.executeAsyncScript("arguments[0].click();", element);
 			flag = true;
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			throw e;
 		} finally {
 			if (flag) {
@@ -573,7 +571,8 @@ public class Action extends BaseClass {
 		System.out.println(columns.size());
 		for (WebElement column : columns) {
 			System.out.print(column.getText());
-			System.out.print("|");		}
+			System.out.print("|");
+		}
 		return a;
 	}
 

@@ -1,9 +1,9 @@
 package com.POS.Utilities;
 
-import com.POS.BaseClass.BaseClass;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.POS.BaseClass.BaseClass;
 
 public class ExtentReport extends BaseClass {
 	public static ExtentHtmlReporter htmlReporter;

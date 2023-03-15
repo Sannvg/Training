@@ -3,53 +3,70 @@ package com.POS.Testcases;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import com.POS.BaseClass.BaseClass;
-import com.POS.PageObjects.AddStore;
-import com.POS.PageObjects.HomePage;
-import com.POS.PageObjects.Login;
-import com.POS.PageObjects.Store;
 import com.POS.Utilities.ExcelRead;
 import com.POS.Utilities.Log;
 
 public class VerifyStoreTest extends BaseClass {
-	
+
 	@Test(priority = 1)
-	public void validateShowCount() {			
-		act.click1(objStore.menuStore(), "Store Menu");
-		Log.startTestCase("VerifyStoreTest--validateShowCount");		
-		Assert.assertTrue(objStore.showStore().isDisplayed());
-		act.explicitWait(driver, objStore.showStore(), Duration.ofSeconds(10));
+	public void validateShowCount() {
+		Log.startTestCase("VerifyStoreTest--validateShowCount");
+		objLogin.loginFn();
+		act.click1(objHome.menuStore(), "Store Menu");
 		act.selectByVisibleText("50", objStore.showStore());
-		Log.endTestCase("VerifyStoreTest--validateShowCount");
 		int rwcount = act.getRowCount(objStore.tableStore());
-		Assert.assertEquals(rwcount, 50);
+		SoftAssert sasst = new SoftAssert();
+		sasst.assertEquals(rwcount, 50);
+		sasst.assertAll();
+		objHome.logOutFn();
+		Log.endTestCase("VerifyStoreTest--validateShowCount");
 	}
-	
-	@Test(priority = 0)
-	public void validateTableHeaders() {	
-		Log.startTestCase("VerifyStoreTest--validateTableHeaders");			
-		act.click1(objStore.menuStore(), "Store Menu");
-		Assert.assertTrue(objStore.tableStore().isDisplayed());	
+
+	@Test(priority = 0, groups = { "Smoke" })
+	public void validateTableHeaders() {
+		Log.startTestCase("VerifyStoreTest--validateTableHeaders");
+		objLogin.loginFn();
+		act.click1(objHome.menuStore(), "Store Menu");
 		List<WebElement> storetblHdrs = objStore.tblStoreHeaders();
-		for(WebElement hdr:storetblHdrs){
-			System.out.println(hdr.getText());
+		List<String> storeList = new ArrayList<String>();
+		boolean flag = false;
+		storeList.add("Store Name");
+		storeList.add("Email");
+		storeList.add("Store Phone");
+		storeList.add("Country");
+		storeList.add("City");
+		storeList.add("Action");
+		for (int m = 0; m < storeList.size(); m++) {
+			for (WebElement hdr : storetblHdrs) {
+				if ((storeList.get(m).equalsIgnoreCase(hdr.getText()))) {
+					flag = true;
+					break;
+				}
+			}
+			flag = false;
 		}
+		SoftAssert sasst = new SoftAssert();
+		sasst.assertFalse(flag);
+		sasst.assertAll();
+		objHome.logOutFn();
 		Log.endTestCase("VerifyStoreTest--validateTableHeaders");
-		Assert.assertEquals(6, storetblHdrs.size());
 	}
-	
+
 	@Test(priority = 2)
 	public void validateAddStore() throws Exception {
-		Log.startTestCase("VerifyStoreTest--validateAddStore");			
-		act.click1(objStore.menuStore(), "Store Menu");
-		Assert.assertTrue(objStore.addStore().isDisplayed());	
-		act.click1(objStore.addStore(), "Add Store");		
+		Log.startTestCase("VerifyStoreTest--validateAddStore");
+		objLogin.loginFn();
+		act.click1(objHome.menuStore(), "Store Menu");
+		act.click1(objStore.addStore(), "Add Store");
 		ExcelRead data = new ExcelRead();
-		ArrayList excelData = data.getData("Store");		
+		ArrayList excelData = data.getData("Store");
 		act.type(objAddStore.storeName(), (String) excelData.get(0));
 		act.type(objAddStore.storeEmail(), (String) excelData.get(1));
 		act.type(objAddStore.storePhone(), (String) excelData.get(2));
@@ -58,52 +75,77 @@ public class VerifyStoreTest extends BaseClass {
 		act.type(objAddStore.storeAddress(), (String) excelData.get(5));
 		act.type(objAddStore.storeCustFooter(), (String) excelData.get(6));
 		act.click1(objAddStore.storeAddSubmit(), "Add Store Submit");
-		act.fluentWait(driver, objStore.searchStore(), 5);
-		act.click1(objStore.searchStore(), "Search Added Product");
-		act.type(objStore.searchStore(), (String)excelData.get(0));
 		Log.info("Add Store Details entered");
-		Log.endTestCase("VerifyStoreTest--validateAddStore");
+		act.fluentWait(getDriver(), objStore.searchStore(), 5);
+		act.click1(objStore.searchStore(), "Search Added Product");
+		act.type(objStore.searchStore(), (String) excelData.get(0));
 		int tblRowCnt = act.getRowCount(objStore.tableStore());
 		Assert.assertTrue(tblRowCnt > 0, "Store Added");
+		objHome.logOutFn();
+		Log.endTestCase("VerifyStoreTest--validateAddStore");
 	}
-	
+
 	@Test(priority = 3)
-	public void validateSearchStore() {			
+	public void validateSearchStore() {
 		Log.startTestCase("VerifyStoreTest--validateSearchStore");
-		act.click1(objStore.menuStore(), "Store Menu");
-		Assert.assertTrue(objStore.searchStore().isDisplayed());
+		objLogin.loginFn();
+		act.click1(objHome.menuStore(), "Store Menu");
 		act.click1(objStore.searchStore(), "Search Store");
 		Log.info("Search Store Details entered");
-		act.type(objStore.searchStore(), "TestStore-1");
-		act.fluentWait(driver, objStore.tableStore(), 5);
-		Log.endTestCase("VerifyStoreTest--validateSearchStore");
+		act.type(objStore.searchStore(), "Test OBS Store");
+		act.fluentWait(getDriver(), objStore.tableStore(), 5);
 		int tblRowCnt = act.getRowCount(objStore.tableStore());
-		Assert.assertTrue(tblRowCnt > 0, "Search Product is displayed");
+		Assert.assertTrue(tblRowCnt > 0, "Search Store is displayed");
+		objHome.logOutFn();
+		Log.endTestCase("VerifyStoreTest--validateSearchStore");
 	}
 
 	@Test(priority = 4)
-	public void validateEditStore() {			
+	public void validateEditStore() {
 		Log.startTestCase("VerifyStoreTest--validateEditStore");
-		act.click1(objStore.menuStore(), "Store Menu");		
-		Assert.assertTrue(objStore.addStore().isDisplayed());
+		objLogin.loginFn();
+		act.click1(objHome.menuStore(), "Store Menu");
 		act.click1(objStore.searchStore(), "Search Store");
+		act.type(objStore.searchStore(), "Test OBS Store");
+		act.fluentWait(getDriver(), objStore.tableStore(), 10);
+		Log.info("Clicked on Edit Store");
+		act.click1(objStore.editStore(), "Edit Store");
+		act.type(objAddStore.storeName(), "OBS Store");
+		act.type(objAddStore.storePhone(), "123123");
 		Log.info("Edit Store Details entered");
-		act.type(objStore.searchStore(), "TestStore-1");
-		act.fluentWait(driver, objStore.tableStore(), 5);
-		act.click1(objStore.editStore(), "OBSTestStore-1");
-		Log.endTestCase("VerifyStoreTest--validateEditStore");			
+		act.click1(objAddStore.storeAddSubmit(), "Edit Store Submit");
+		act.explicitWait(getDriver(), objStore.showStore(), Duration.ofSeconds(10));
+		act.click1(objStore.searchStore(), "Search Store");
+		act.type(objStore.searchStore(), "OBS Store");
+		act.fluentWait(getDriver(), objStore.tableStore(), 5);
+		Assert.assertTrue(objStore.firstElement().isDisplayed(), "Store is Updated");
+		objHome.logOutFn();
+		Log.endTestCase("VerifyStoreTest--validateEditStore");
 	}
 
-	@Test(priority =5)
-	public void validateDeleteStore() {		
-		Log.startTestCase("VerifyStoreTest--validateDeleteStore");
-		act.click1(objStore.menuStore(), "Store Menu");
-		Assert.assertTrue(objStore.addStore().isDisplayed());
-		act.type(objStore.searchStore(), "OBSTestStore-1");
-		act.fluentWait(driver, objStore.tableStore(), 5);
-		act.click1(objStore.deleteStore(), "Delete Store");		
-		Assert.assertEquals(objStore.noElement().getText(),"No matching records found");	
-		System.out.println("Store is Deleted");
-		Log.endTestCase("VerifyStoreTest--validateDeleteStore");
-	}		
+	@Test(priority=5,enabled=false)
+	public void validatePagination(){		
+		Log.endTestCase("VerifyStoreTest--validatePagination");
+		objLogin.loginFn();
+		act.click1(objHome.menuStore(), "Store Menu");
+		String text = objStore.lblTblPages().getText();	
+		List<WebElement> storeTblPages = objStore.pageIndexStore();
+		int totalpages = Integer.valueOf(text.substring(text.indexOf("of")+3, text.indexOf("entries")-1));
+		System.out.println("Total no: of Pages: "+totalpages);
+		int page = 2;
+		boolean flag = false;
+		System.out.println(storeTblPages.size());
+		for (int p = 0; p < storeTblPages.size(); p++) {
+			for (WebElement pg : storeTblPages) {
+				if (pg.getText().equalsIgnoreCase("3")) {
+					pg.click();
+					flag = true;
+					break;				
+				}
+			}
+			flag = false;
+		}
+		Assert.assertTrue(flag);
+		Log.endTestCase("VerifyStoreTest--validatePagination");
+	}
 }

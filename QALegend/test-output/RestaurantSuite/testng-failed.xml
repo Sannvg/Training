@@ -1,39 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [RestaurantSuite]" guice-stage="DEVELOPMENT">
+<suite parallel="tests" name="Failed suite [RestaurantSuite]" guice-stage="DEVELOPMENT">
+  <parameter name="Browser" value="Edge"/>
   <listeners>
     <listener class-name="com.POS.Utilities.Listeners"/>
   </listeners>
-  <test thread-count="5" name="RestaurantTest(failed)">
+  <test thread-count="5" parallel="tests" name="Test1(failed)">
     <classes>
-      <class name="com.POS.BaseClass.BaseClass">
-        <methods>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.POS.BaseClass.BaseClass -->
-      <class name="com.POS.Testcases.VerifyHomePageTest">
-        <methods>
-          <include name="loadFiles"/>
-          <include name="languageListed"/>
-          <include name="loadConfig"/>
-          <include name="displayElements"/>
-          <include name="menuElementsClick"/>
-          <include name="menuElements"/>
-          <include name="tearDown"/>
-          <include name="logOut"/>
-          <include name="loadBrowser"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyHomePageTest -->
       <class name="com.POS.Testcases.VerifyUserLoginTest">
         <methods>
+          <include name="beforeMethods"/>
           <include name="loadFiles"/>
           <include name="validateAllLogin"/>
           <include name="loadConfig"/>
           <include name="validateLogin"/>
-          <include name="loadBrowser"/>
+          <include name="afterMethod"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.POS.Testcases.VerifyUserLoginTest -->
     </classes>
-  </test> <!-- RestaurantTest(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [RestaurantSuite] -->

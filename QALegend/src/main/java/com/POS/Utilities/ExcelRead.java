@@ -3,18 +3,16 @@ package com.POS.Utilities;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.util.NumberToTextConverter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import com.POS.BaseClass.BaseClass;
 
-public class ExcelRead {	
-	
+public class ExcelRead extends BaseClass {
 	public ArrayList<String> getData(String Testcase) throws Exception {
-		
 		ArrayList<String> a = new ArrayList<String>();
 		// Path of excel sheet
 		FileInputStream fil = new FileInputStream("C:/Users/Thomas/Desktop/QALegend.xlsx");
@@ -22,11 +20,10 @@ public class ExcelRead {
 		int sheets = 0;
 		// Accessing the sheets of the workbook
 		sheets = wb.getNumberOfSheets();
-		// System.out.println(sheets);
 		// iterating through all the sheets and finding the required one
 		for (int i = 0; i < sheets; i++) {
 			// fetching the required sheet
-			if (wb.getSheetName(i).equalsIgnoreCase("Store")) {
+			if (wb.getSheetName(i).equalsIgnoreCase("Smoke")) {
 				// working on the right sheet
 				XSSFSheet sheet = wb.getSheetAt(i);
 				Iterator<Row> rows = sheet.rowIterator();
@@ -45,28 +42,21 @@ public class ExcelRead {
 					}
 					k++;
 				}
-				// System.out.println(col);
 				// now scan the entire row and get all the details in the row
 				while (rows.hasNext()) {
 					Row r = rows.next();
-
 					if (r.getCell(col).getStringCellValue().equalsIgnoreCase(Testcase)) {
 						Iterator<Cell> cell = r.cellIterator();
 						cell.next();
-						while (cell.hasNext())
-						// type = string
-						{
+						while (cell.hasNext()) {
 							Cell c = cell.next();
 							if (c.getCellType() == CellType.STRING) {
 								a.add(c.getStringCellValue());
 							} else {
 								a.add(NumberToTextConverter.toText(c.getNumericCellValue()));
-								// a.add(c.getNumericCellValue());
 							}
 						}
 					}
-					// case 2 numeric
-					// a.add(NumberToTextConverter.toText(cell.next().getNumericCellValue()));
 				}
 			}
 		}

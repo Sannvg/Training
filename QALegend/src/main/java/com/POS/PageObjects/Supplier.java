@@ -1,48 +1,35 @@
 package com.POS.PageObjects;
 
 import java.util.List;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.POS.BaseClass.BaseClass;
 
 public class Supplier extends BaseClass {
-
-	WebDriver driver;
-	
-	@FindBy(xpath="//i[@class='fa fa-truck']")
+	@FindBy(xpath = "//i[@class='fa fa-truck']")
 	WebElement menuSupplier;
-
 	@FindBy(css = "select[name='Table_length']")
 	WebElement drpShowSupplier;
-
 	@FindBy(css = "input[type='search']")
 	WebElement txtSearchSupplier;
-	
 	@FindBy(css = "table[id='Table']")
 	WebElement tblSupplier;
-
 	@FindBy(css = "table[id='Table']")
 	List<WebElement> listtblSupplier;
-	
 	@FindBy(xpath = "//button[@data-target='#AddSupplier']")
 	WebElement btnAddSupplier;
-	
-	@FindBy(className="pagination")
+	@FindBy(className = "pagination")
 	WebElement tblPaginationSupplier;
-	
-	public Supplier(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+
+	public Supplier() {
+		PageFactory.initElements(getDriver(), this);
 	}
-	
+
 	public WebElement menuSupplier() {
 		return menuSupplier;
 	}
- 
+
 	public WebElement showSupplier() {
 		return drpShowSupplier;
 	}
@@ -50,20 +37,20 @@ public class Supplier extends BaseClass {
 	public WebElement searchSupplier() {
 		return txtSearchSupplier;
 	}
-	
+
 	public List<WebElement> listSupplier() {
 		return listtblSupplier;
 	}
-	
+
 	public WebElement tableSupplier() {
 		return tblSupplier;
 	}
+
 	public WebElement addSupplier() {
 		return btnAddSupplier;
 	}
-	
+
 	public WebElement pageIndexSupplier() {
 		return tblPaginationSupplier;
 	}
-
 }

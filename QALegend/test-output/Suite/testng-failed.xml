@@ -4,102 +4,19 @@
   <listeners>
     <listener class-name="com.POS.Utilities.Listeners"/>
   </listeners>
-  <test thread-count="5" name="TrialRun(failed)">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.POS.Testcases.VerifyProductPageTest">
-        <methods>
-          <include name="loadFiles"/>
-          <include name="searchPdt"/>
-          <include name="showProduct"/>
-          <include name="loadConfig"/>
-          <include name="filterBySupplier"/>
-          <include name="loadBrowser"/>
-          <include name="tearDown"/>
-          <include name="filterBySupPdtType"/>
-          <include name="filterByPdtType"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyProductPageTest -->
-      <class name="com.POS.Testcases.VerifyCustomerTest">
-        <methods>
-          <include name="loadFiles"/>
-          <include name="addCustomer"/>
-          <include name="editCustomer"/>
-          <include name="loadConfig"/>
-          <include name="searchStore"/>
-          <include name="showWaiter"/>
-          <include name="loadBrowser"/>
-          <include name="deleteCustomer"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyCustomerTest -->
       <class name="com.POS.Testcases.VerifyStoreTest">
         <methods>
-          <include name="showStore"/>
-          <include name="tableHeaders"/>
+          <include name="beforeMethods"/>
+          <include name="validateEditStore"/>
           <include name="loadFiles"/>
-          <include name="deleteStore"/>
+          <include name="validateDeleteStore"/>
           <include name="loadConfig"/>
-          <include name="loadBrowser"/>
-          <include name="editStore"/>
-          <include name="searchStore"/>
-          <include name="addStore"/>
+          <include name="afterMethod"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.POS.Testcases.VerifyStoreTest -->
-      <class name="com.POS.Testcases.VerifyAddSupplierTest">
-        <methods>
-          <include name="loadFiles"/>
-          <include name="loadConfig"/>
-          <include name="AddSupplier"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyAddSupplierTest -->
-      <class name="com.POS.Testcases.VerifyAddProductTest">
-        <methods>
-          <include name="loadFiles"/>
-          <include name="addProduct"/>
-          <include name="loadConfig"/>
-          <include name="loadBrowser"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyAddProductTest -->
-      <class name="com.POS.Testcases.VerifyUserLoginTest">
-        <methods>
-          <include name="loadFiles"/>
-          <include name="validateAllLogin"/>
-          <include name="loadConfig"/>
-          <include name="validateLogin"/>
-          <include name="loadBrowser"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyUserLoginTest -->
-      <class name="com.POS.Testcases.VerifyWaiterTest">
-        <methods>
-          <include name="loadFiles"/>
-          <include name="addWaiter"/>
-          <include name="searchStore"/>
-          <include name="loadConfig"/>
-          <include name="menuStore"/>
-          <include name="editStore"/>
-          <include name="deleteStore"/>
-          <include name="tearDown"/>
-          <include name="showWaiter"/>
-          <include name="loadBrowser"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyWaiterTest -->
-      <class name="com.POS.Testcases.VerifyHomePageTest">
-        <methods>
-          <include name="languageListed"/>
-          <include name="loadFiles"/>
-          <include name="loadConfig"/>
-          <include name="displayElements"/>
-          <include name="menuElementsClick"/>
-          <include name="menuElements"/>
-          <include name="tearDown"/>
-          <include name="logOut"/>
-          <include name="loadBrowser"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyHomePageTest -->
     </classes>
-  </test> <!-- TrialRun(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

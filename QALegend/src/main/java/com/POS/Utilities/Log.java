@@ -1,49 +1,51 @@
 package com.POS.Utilities;
 
 import org.apache.log4j.Logger;
+import com.POS.BaseClass.BaseClass;
 
-public class Log {
+public class Log extends BaseClass {
 	// Initialize Log4j logs
-			public static Logger Log = Logger.getLogger(Log.class.getName());
+	public static Logger Log = Logger.getLogger(Log.class.getName());
 
-			public static void startTestCase(String sTestCaseName){		  
-				 Log.info("====================================="+sTestCaseName+" TEST START=========================================");
-				 }
-			
-			public static void endTestCase(String sTestCaseName){
-				Log.info("====================================="+sTestCaseName+" TEST END=========================================");
-				 }
-			
-			// Need to create below methods, so that they can be called  
+	public static void startTestCase(String sTestCaseName) {
+		Log.info("=====================================" + sTestCaseName
+				+ " TEST START=========================================");
+	}
 
-			 public static void info(String message) {
+	public static void endTestCase(String sTestCaseName) {
+		Log.info("=====================================" + sTestCaseName
+				+ " TEST END=========================================");
+	}
 
-					Log.info(message);
+	// Need to create below methods, so that they can be called
 
-					}
+	public static void info(String message) {
 
-			 public static void warn(String message) {
+		Log.info(message);
 
-			    Log.warn(message);
+	}
 
-				}
+	public static void warn(String message) {
 
-			 public static void error(String message) {
+		Log.warn(message);
 
-			    Log.error(message);
+	}
 
-				}
+	public static void error(String message) {
 
-			 public static void fatal(String message) {
+		Log.error(message);
 
-			    Log.fatal(message);
+	}
 
-				}
+	public static void fatal(String message) {
 
-			 public static void debug(String message) {
+		Log.fatal(message);
 
-			    Log.debug(message);
+	}
 
-				}
+	public static void debug(String message) {
 
+		Log.debug(message);
+
+	}
 }
