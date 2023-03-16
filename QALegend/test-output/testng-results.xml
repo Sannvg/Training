@@ -1,187 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="8" passed="6" failed="0" skipped="0">
+<testng-results ignored="11" total="12" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-15T23:31:59 GST" name="RestaurantSuite" finished-at="2023-03-15T23:38:11 GST" duration-ms="371666">
+  <suite started-at="2023-03-16T16:03:10 GST" name="RestaurantSuite" finished-at="2023-03-16T16:03:56 GST" duration-ms="46002">
     <groups>
-      <group name="Smoke">
-        <method signature="VerifyHomePageTest.validateElementsDisplay()[pri:1, instance:com.POS.Testcases.VerifyHomePageTest@4b45a2f5]" name="validateElementsDisplay" class="com.POS.Testcases.VerifyHomePageTest"/>
-        <method signature="VerifyHomePageTest.validateMenuDisplay()[pri:3, instance:com.POS.Testcases.VerifyHomePageTest@4b45a2f5]" name="validateMenuDisplay" class="com.POS.Testcases.VerifyHomePageTest"/>
-      </group> <!-- Smoke -->
     </groups>
-    <test started-at="2023-03-15T23:31:59 GST" name="EdgeTest" finished-at="2023-03-15T23:34:41 GST" duration-ms="162031">
-      <class name="com.POS.Testcases.VerifyHomePageTest">
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.POS.Testcases.VerifyHomePageTest@4b45a2f5]" started-at="2023-03-15T23:31:59 GST" name="loadConfig" finished-at="2023-03-15T23:31:59 GST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="beforeMethods(java.lang.String)[pri:0, instance:com.POS.Testcases.VerifyHomePageTest@4b45a2f5]" started-at="2023-03-15T23:32:00 GST" name="beforeMethods" finished-at="2023-03-15T23:33:15 GST" duration-ms="75755" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Edge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethods -->
-        <test-method signature="validateElementsDisplay()[pri:1, instance:com.POS.Testcases.VerifyHomePageTest@4b45a2f5]" started-at="2023-03-15T23:33:15 GST" name="validateElementsDisplay" finished-at="2023-03-15T23:34:01 GST" duration-ms="45529" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateElementsDisplay -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.POS.Testcases.VerifyHomePageTest@4b45a2f5]" started-at="2023-03-15T23:34:01 GST" name="afterMethod" finished-at="2023-03-15T23:34:10 GST" duration-ms="9289" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethods(java.lang.String)[pri:0, instance:com.POS.Testcases.VerifyHomePageTest@4b45a2f5]" started-at="2023-03-15T23:34:10 GST" name="beforeMethods" finished-at="2023-03-15T23:34:35 GST" duration-ms="25059" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Edge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethods -->
-        <test-method signature="validateMenuDisplay()[pri:3, instance:com.POS.Testcases.VerifyHomePageTest@4b45a2f5]" started-at="2023-03-15T23:34:35 GST" name="validateMenuDisplay" finished-at="2023-03-15T23:34:40 GST" duration-ms="5061" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateMenuDisplay -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.POS.Testcases.VerifyHomePageTest@4b45a2f5]" started-at="2023-03-15T23:34:40 GST" name="afterMethod" finished-at="2023-03-15T23:34:41 GST" duration-ms="864" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.POS.Testcases.VerifyHomePageTest -->
-    </test> <!-- EdgeTest -->
-    <test started-at="2023-03-15T23:34:42 GST" name="FirefoxTest" finished-at="2023-03-15T23:38:11 GST" duration-ms="208507">
-      <class name="com.POS.Testcases.VerifyUserLoginTest">
-        <test-method is-config="true" signature="loadFiles()[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:31:58 GST" name="loadFiles" finished-at="2023-03-15T23:31:59 GST" duration-ms="1542" status="PASS">
+    <test started-at="2023-03-16T16:03:10 GST" name="Test" finished-at="2023-03-16T16:03:56 GST" duration-ms="46002">
+      <class name="com.POS.BaseClass.BaseClass">
+        <test-method is-config="true" signature="loadFiles()[pri:0, instance:com.POS.BaseClass.BaseClass@4a883b15]" started-at="2023-03-16T16:03:10 GST" name="loadFiles" finished-at="2023-03-16T16:03:10 GST" duration-ms="232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadFiles -->
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:34:42 GST" name="loadConfig" finished-at="2023-03-15T23:34:42 GST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.POS.BaseClass.BaseClass@4a883b15]" started-at="2023-03-16T16:03:10 GST" name="loadConfig" finished-at="2023-03-16T16:03:10 GST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
-        <test-method is-config="true" signature="beforeMethods(java.lang.String)[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:34:42 GST" name="beforeMethods" finished-at="2023-03-15T23:36:14 GST" duration-ms="91387" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FireFox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethods -->
-        <test-method signature="validateLogin()[pri:1, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:36:14 GST" name="validateLogin" finished-at="2023-03-15T23:36:41 GST" duration-ms="27343" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateLogin -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:36:41 GST" name="afterMethod" finished-at="2023-03-15T23:36:52 GST" duration-ms="10790" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethods(java.lang.String)[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:36:52 GST" name="beforeMethods" finished-at="2023-03-15T23:37:12 GST" duration-ms="20101" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FireFox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethods -->
-        <test-method signature="validateAllLogin(java.lang.String,java.lang.String)[pri:2, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:37:12 GST" name="validateAllLogin" data-provider="getLoginUsers" finished-at="2023-03-15T23:37:13 GST" duration-ms="1288" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[InvalidUn]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[InvalidPw]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateAllLogin -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:37:13 GST" name="afterMethod" finished-at="2023-03-15T23:37:16 GST" duration-ms="2697" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethods(java.lang.String)[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:37:16 GST" name="beforeMethods" finished-at="2023-03-15T23:37:31 GST" duration-ms="14972" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FireFox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethods -->
-        <test-method signature="validateAllLogin(java.lang.String,java.lang.String)[pri:2, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:37:31 GST" name="validateAllLogin" data-provider="getLoginUsers" finished-at="2023-03-15T23:37:32 GST" duration-ms="1370" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[InvalidPw]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateAllLogin -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:37:32 GST" name="afterMethod" finished-at="2023-03-15T23:37:35 GST" duration-ms="2401" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethods(java.lang.String)[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:37:35 GST" name="beforeMethods" finished-at="2023-03-15T23:38:01 GST" duration-ms="25968" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FireFox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethods -->
-        <test-method signature="validateAllLogin(java.lang.String,java.lang.String)[pri:2, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:38:01 GST" name="validateAllLogin" data-provider="getLoginUsers" finished-at="2023-03-15T23:38:04 GST" duration-ms="3066" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[InvalidUn]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- validateAllLogin -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:38:04 GST" name="afterMethod" finished-at="2023-03-15T23:38:11 GST" duration-ms="7097" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.POS.Testcases.VerifyUserLoginTest@17f9d882]" started-at="2023-03-15T23:38:12 GST" name="tearDown" finished-at="2023-03-15T23:38:15 GST" duration-ms="3569" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.POS.BaseClass.BaseClass@4a883b15]" started-at="2023-03-16T16:03:57 GST" name="tearDown" finished-at="2023-03-16T16:03:57 GST" duration-ms="745" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.POS.Testcases.VerifyUserLoginTest -->
-    </test> <!-- FirefoxTest -->
+      </class> <!-- com.POS.BaseClass.BaseClass -->
+      <class name="com.POS.Testcases.VerifyProductPageTest">
+        <test-method is-config="true" signature="beforeMethods(java.lang.String)[pri:0, instance:com.POS.Testcases.VerifyProductPageTest@1c7696c6]" started-at="2023-03-16T16:03:11 GST" name="beforeMethods" finished-at="2023-03-16T16:03:36 GST" duration-ms="25617" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethods -->
+        <test-method signature="validateUploadCSV()[pri:6, instance:com.POS.Testcases.VerifyProductPageTest@1c7696c6]" started-at="2023-03-16T16:03:36 GST" name="validateUploadCSV" finished-at="2023-03-16T16:03:55 GST" duration-ms="19283" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateUploadCSV -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:com.POS.Testcases.VerifyProductPageTest@1c7696c6]" started-at="2023-03-16T16:03:55 GST" name="afterMethod" finished-at="2023-03-16T16:03:56 GST" duration-ms="1008" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- com.POS.Testcases.VerifyProductPageTest -->
+    </test> <!-- Test -->
   </suite> <!-- RestaurantSuite -->
 </testng-results>

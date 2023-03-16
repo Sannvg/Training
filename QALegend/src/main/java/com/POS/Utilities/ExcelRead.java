@@ -15,7 +15,7 @@ public class ExcelRead extends BaseClass {
 	public ArrayList<String> getData(String Testcase) throws Exception {
 		ArrayList<String> a = new ArrayList<String>();
 		// Path of excel sheet
-		FileInputStream fil = new FileInputStream("C:/Users/Thomas/Desktop/QALegend.xlsx");
+		FileInputStream fil = new FileInputStream(System.getProperty("user.dir") + "\\Files\\QALegend.xlsx");
 		XSSFWorkbook wb = new XSSFWorkbook(fil);
 		int sheets = 0;
 		// Accessing the sheets of the workbook

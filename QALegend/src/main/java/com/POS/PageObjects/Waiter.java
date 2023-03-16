@@ -16,10 +16,25 @@ public class Waiter extends BaseClass {
 	WebElement bnAddWaiter;
 	@FindBy(className = "pagination")
 	WebElement tblPaginationWaiter;
-	@FindBy(xpath = "(//a[@data-original-title='Delete'])[1]")
+	@FindBy(xpath = "(//a[@data-toggle='popover'])[1]")
 	WebElement deleteWaiter;
+	@FindBy(xpath = "//div[@class='popover fade left in']//div//a")
+	WebElement btnDltConfirm;		
 	@FindBy(xpath = "(//a[@data-original-title='Edit'])[1]")
 	WebElement editWaiter;
+	// Add Waiter
+	@FindBy(id = "WaiterName")
+	WebElement txtWaiterName;
+	@FindBy(id = "WaiterPhone")
+	WebElement txtWaiterPhone;
+	@FindBy(id = "WaiterEmail")
+	WebElement txtWaiterEmail;
+	@FindBy(id = "WaiterStore")
+	WebElement drpWaiterStore;
+	@FindBy(xpath = "//button[text()='Close']")
+	WebElement btnCloseAddWaiter;
+	@FindBy(xpath = "//button[text()='Submit']")
+	WebElement btnSubmitAddWaiter;	
 
 	public Waiter() {
 		PageFactory.initElements(getDriver(), this);
@@ -47,9 +62,41 @@ public class Waiter extends BaseClass {
 
 	public WebElement deleteWaiter() {
 		return deleteWaiter;
+	}	
+	public WebElement btnDltConfirm() {
+		return btnDltConfirm;
 	}
-
 	public WebElement editWaiter() {
 		return editWaiter;
+	}
+
+	public WebElement waiterName() {
+		return txtWaiterName;
+	}
+
+	public WebElement waiterPhone() {
+		return txtWaiterPhone;
+	}
+
+	public WebElement waiterEmail() {
+		return txtWaiterEmail;
+	}
+
+	public WebElement waiterStore() {
+		return drpWaiterStore;
+	}
+
+	public WebElement waiterAddClose() {
+		return btnCloseAddWaiter;
+	}
+
+	public WebElement waiterAddSubmit() {
+		return btnSubmitAddWaiter;
+	}
+	
+	public void beforefnWaiter() {
+		objLogin.loginFn();
+		act.click1(objHome.menuPeople(), "People Menu");
+		act.click1(objHome.menuWaiter(), "Waiter Menu");
 	}
 }

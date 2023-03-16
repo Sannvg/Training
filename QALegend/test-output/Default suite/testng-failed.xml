@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.POS.Testcases.VerifyStoreTest">
+      <class name="com.POS.Testcases.VerifyProductPageTest">
         <methods>
-          <include name="validatePagination"/>
+          <include name="validateAddProduct"/>
           <include name="beforeMethods"/>
           <include name="loadFiles"/>
           <include name="loadConfig"/>
           <include name="afterMethod"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.POS.Testcases.VerifyStoreTest -->
+      </class> <!-- com.POS.Testcases.VerifyProductPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -24,6 +24,10 @@ public class HomePage extends BaseClass {
 	WebElement menuSupplier;
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/customers']")
 	WebElement menuCustomer;
+	@FindBy(xpath = "//i[@class='fa fa-bookmark']//following-sibling::span[1]")
+	WebElement menuCategory;
+	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/categories']")
+	WebElement menuCatPdt;
 	@FindBy(css = ".img-circle.topbar-userpic.hidden-xs")
 	WebElement imgLogin;
 	@FindBy(xpath = "//span[@class='hidden-xs'][1]")
@@ -70,7 +74,12 @@ public class HomePage extends BaseClass {
 	public WebElement menuCustomer() {
 		return menuCustomer;
 	}
-
+	public WebElement menuCategory() {
+		return menuCategory;
+	}
+	public WebElement menuCatPdt() {
+		return menuCatPdt;
+	}
 	public WebElement menuSupplier() {
 		return menuSupplier;
 	}

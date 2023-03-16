@@ -19,8 +19,8 @@ import org.testng.annotations.Parameters;
 
 import com.POS.Actions.Action;
 import com.POS.PageObjects.AddProduct;
-import com.POS.PageObjects.AddStore;
 import com.POS.PageObjects.Customer;
+import com.POS.PageObjects.EditPeople;
 import com.POS.PageObjects.HomePage;
 import com.POS.PageObjects.Login;
 import com.POS.PageObjects.Product;
@@ -28,6 +28,7 @@ import com.POS.PageObjects.Store;
 import com.POS.PageObjects.StoreManage;
 import com.POS.PageObjects.Supplier;
 import com.POS.PageObjects.Waiter;
+import com.POS.PageObjects.Category;
 import com.POS.Utilities.ExtentReport;
 
 public class BaseClass {
@@ -39,11 +40,12 @@ public class BaseClass {
 	public static Product objPdt;
 	public static AddProduct objAddPdt;
 	public static Store objStore;
-	public static AddStore objAddStore;
 	public static StoreManage objMngStore;
 	public static Waiter objWaiter;
 	public static Customer objCustomer;
 	public static Supplier objSupplier;
+	public static EditPeople objEditPeople;
+	public static Category objCategory;
 	
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<RemoteWebDriver>();
 
@@ -75,11 +77,12 @@ public class BaseClass {
 		objPdt = new Product();
 		objAddPdt = new AddProduct();
 		objStore = new Store();
-		objAddStore = new AddStore();
 		objMngStore = new StoreManage();
 		objWaiter = new Waiter();
 		objCustomer = new Customer();
 		objSupplier = new Supplier();
+		objEditPeople = new EditPeople();
+		objCategory = new Category();
 	}
 	
 	public static WebDriver getDriver() {

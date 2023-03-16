@@ -37,13 +37,13 @@ public class Product extends BaseClass {
 	WebElement tblPaginationPdt;
 	
 	// Upload File Window
-	@FindBy(id = "ImageInput")
+	@FindBy(xpath="(//input[@id='ImageInput'])[2]")
 	WebElement btnUploadfile;
 	@FindBy(linkText = "Download Sample")
 	WebElement linkDownload;
 	@FindBy(xpath = "(//button[@data-dismiss='modal' and text()='Close'])[2]")
 	WebElement btnUFClose;
-	@FindBy(xpath = "(//button[@type='submit'])[2]")
+	@FindBy(xpath = "(//button[@type='submit'])[3]")
 	WebElement btnUFSubmit;
 	
 	// Print Menu
