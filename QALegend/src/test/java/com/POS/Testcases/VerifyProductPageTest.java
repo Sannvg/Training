@@ -16,7 +16,7 @@ import com.POS.Utilities.ExcelRead;
 import com.POS.Utilities.Log;
 
 public class VerifyProductPageTest extends BaseClass {	
-	@Test(priority = 1,groups= {"Smoke"},enabled=false)
+	@Test(priority = 1,groups= {"Smoke"})
 	public void validateShowPdtTblCount(){	
 		Log.startTestCase("VerifyProductPageTest--validateShowPdtTblCount");	
 		objLogin.loginFn();			
@@ -32,7 +32,7 @@ public class VerifyProductPageTest extends BaseClass {
 		objHome.logOutFn();	
 		Log.endTestCase("VerifyProductPageTest--showProduct");
 	}
-	@Test(priority = 2,enabled=false)
+	@Test(priority = 2)
 	public void validateFilterBySupplier(){
 		Log.startTestCase("VerifyProductPageTest--validateFilterBySupplier");	
 		objLogin.loginFn();			
@@ -46,7 +46,7 @@ public class VerifyProductPageTest extends BaseClass {
 		objHome.logOutFn();	
 		Log.endTestCase("VerifyProductPageTest--validateFilterBySupplier");
 	}
-	@Test(priority = 3,enabled=false)
+	@Test(priority = 3)
 	public void validateFilterByPdtType(){
 		Log.startTestCase("VerifyProductPageTest--validateFilterByPdtType");	
 		objLogin.loginFn();			
@@ -60,7 +60,7 @@ public class VerifyProductPageTest extends BaseClass {
 		objHome.logOutFn();	
 		Log.endTestCase("VerifyProductPageTest--filterByPdtType");
 	}
-	@Test(priority = 4,enabled=false)
+	@Test(priority = 4)
 	public void validateFilterBySupPdtType(){
 		Log.startTestCase("VerifyProductPageTest--validateFilterBySupPdtType");	
 		objLogin.loginFn();			
@@ -76,7 +76,7 @@ public class VerifyProductPageTest extends BaseClass {
 		objHome.logOutFn();	
 		Log.endTestCase("VerifyProductPageTest--validateFilterBySupPdtType");
 	}
-	@Test(priority = 5,enabled=false)
+	@Test(priority = 5)
 	public void validateDownloadCSV(){
 		Log.startTestCase("VerifyProductPageTest--validateDownloadCSV");
 		objLogin.loginFn();			
@@ -102,7 +102,7 @@ public class VerifyProductPageTest extends BaseClass {
 		Log.endTestCase("VerifyProductPageTest--validateUploadCSV");		
 	}
 	
-	@Test(priority = 7,enabled=false)
+	@Test(priority = 7)
 	public void validatePrintMenu() throws Exception{
 		Log.startTestCase("VerifyProductPageTest--validatePrintMenu");		
 		objLogin.loginFn();
@@ -117,7 +117,7 @@ public class VerifyProductPageTest extends BaseClass {
 		objHome.logOutFn();
 		Log.endTestCase("VerifyProductPageTest--validatePrintMenu");
 	}
-	@Test(priority =8,enabled=false)
+	@Test(priority =8)
 	public void validateAddProduct() throws Exception{	
 		Log.startTestCase("VerifyProductPageTest--validateAddProduct");	
 		objLogin.loginFn();	
@@ -147,7 +147,7 @@ public class VerifyProductPageTest extends BaseClass {
 		objHome.logOutFn();
 		Log.endTestCase("VerifyProductPageTest--validateAddProduct");
 	}
-	@Test(priority = 9,enabled=false)
+	@Test(priority = 9)
 	public void validateSearchPdt() {
 		Log.startTestCase("VerifyProductPageTest--validateSearchPdt");
 		objLogin.loginFn();		
@@ -160,5 +160,4 @@ public class VerifyProductPageTest extends BaseClass {
 		objHome.logOutFn();
 		Log.endTestCase("VerifyProductPageTest--validateSearchPdt");
 	}
-
 }

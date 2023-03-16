@@ -14,9 +14,7 @@ public class Listeners extends ExtentReport implements ITestListener {
 	Action act = new Action();
 
 	public void onTestStart(ITestResult result) {
-
 		test = extent.createTest(result.getName());
-
 	}
 
 	public void onTestSuccess(ITestResult result) {
@@ -47,7 +45,6 @@ public class Listeners extends ExtentReport implements ITestListener {
 
 	public void onTestSkipped(ITestResult result) {
 		if (result.getStatus() == ITestResult.SKIP) {
-
 		}
 	}
 
@@ -57,12 +54,10 @@ public class Listeners extends ExtentReport implements ITestListener {
 
 	public void onStart(ITestContext context) {
 		// TODO Auto-generated method stub
-
 	}
 
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
-
 	}
 
 }

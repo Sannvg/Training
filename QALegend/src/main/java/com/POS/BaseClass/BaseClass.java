@@ -24,6 +24,7 @@ import com.POS.PageObjects.EditPeople;
 import com.POS.PageObjects.HomePage;
 import com.POS.PageObjects.Login;
 import com.POS.PageObjects.Product;
+import com.POS.PageObjects.Settings;
 import com.POS.PageObjects.Store;
 import com.POS.PageObjects.StoreManage;
 import com.POS.PageObjects.Supplier;
@@ -46,6 +47,7 @@ public class BaseClass {
 	public static Supplier objSupplier;
 	public static EditPeople objEditPeople;
 	public static Category objCategory;
+	public static Settings objSettings;
 	
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<RemoteWebDriver>();
 
@@ -83,6 +85,7 @@ public class BaseClass {
 		objSupplier = new Supplier();
 		objEditPeople = new EditPeople();
 		objCategory = new Category();
+		objSettings = new Settings();
 	}
 	
 	public static WebDriver getDriver() {

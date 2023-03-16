@@ -16,7 +16,7 @@
 		<reportName>
 			Restaurant Project Report
 			<![CDATA[
-                <img src='C:\Users\Thomas\Desktop\RestaurantLogo.jpg'/>
+                <img src='System.getProperty("user.dir") + "\\Files\\RestaurantLogo.jpg'/>
             ]]>
 		</reportName>
 		<!-- location of charts in the test view -->

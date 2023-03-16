@@ -9,11 +9,53 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.POS.Testcases.VerifyProductPageTest">
+      <class name="com.POS.Testcases.VerifyStoreTest">
         <methods>
-          <include name="validateUploadCSV"/>
+          <include name="validateStoreSorting"/>
           <include name="beforeMethods"/>
           <include name="loadFiles"/>
+          <include name="loadConfig"/>
+          <include name="afterMethod"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.POS.Testcases.VerifyStoreTest -->
+      <class name="com.POS.Testcases.VerifyStoreManageTest">
+        <methods>
+          <include name="validateDeleteStore"/>
+          <include name="beforeMethods"/>
+          <include name="loadFiles"/>
+          <include name="loadConfig"/>
+          <include name="afterMethod"/>
+          <include name="validateDeleteStoreTbl"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.POS.Testcases.VerifyStoreManageTest -->
+      <class name="com.POS.Testcases.VerifyWaiterTest">
+        <methods>
+          <include name="beforeMethods"/>
+          <include name="loadFiles"/>
+          <include name="loadConfig"/>
+          <include name="validateEditWaiter"/>
+          <include name="afterMethod"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.POS.Testcases.VerifyWaiterTest -->
+      <class name="com.POS.Testcases.VerifySettingsTest">
+        <methods>
+          <include name="beforeMethods"/>
+          <include name="loadFiles"/>
+          <include name="loadConfig"/>
+          <include name="afterMethod"/>
+          <include name="tearDown"/>
+          <include name="validateAddUser"/>
+        </methods>
+      </class> <!-- com.POS.Testcases.VerifySettingsTest -->
+      <class name="com.POS.Testcases.VerifyProductPageTest">
+        <methods>
+          <include name="beforeMethods"/>
+          <include name="validateAddProduct"/>
+          <include name="loadFiles"/>
+          <include name="validateDownloadCSV"/>
           <include name="loadConfig"/>
           <include name="afterMethod"/>
           <include name="tearDown"/>

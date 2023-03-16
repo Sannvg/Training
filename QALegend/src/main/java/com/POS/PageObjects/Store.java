@@ -34,9 +34,7 @@ public class Store extends BaseClass {
 	@FindBy(xpath = "(//a[@data-original-title='manage Tables'])[1]")
 	WebElement manageStore;
 	@FindBy(xpath = "//th[@aria-sort='ascending']")
-	WebElement ascendingStore;
-	@FindBy(xpath = "//th[@aria-sort='descending']")
-	WebElement descendingStore;
+	WebElement btnSortingStore;
 	@FindBy(xpath = "//td[@class='sorting_1']")
 	WebElement firstelement;
 	@FindBy(xpath = "//td[@class='dataTables_empty']")
@@ -116,12 +114,8 @@ public class Store extends BaseClass {
 		return manageStore;
 	}
 
-	public WebElement ascendingStore() {
-		return ascendingStore;
-	}
-
-	public WebElement descendingStore() {
-		return descendingStore;
+	public WebElement btnSortingStore() {
+		return btnSortingStore;
 	}
 
 	public WebElement firstElement() {

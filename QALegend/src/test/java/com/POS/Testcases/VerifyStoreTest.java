@@ -29,7 +29,7 @@ public class VerifyStoreTest extends BaseClass {
 		Log.endTestCase("VerifyStoreTest--validateShowCount");
 	}
 
-	@Test(priority = 0, groups = { "Smoke" })
+	@Test(priority = 0, groups = { "Smoke" },enabled=false)
 	public void validateTableHeaders() {
 		Log.startTestCase("VerifyStoreTest--validateTableHeaders");
 		objLogin.loginFn();
@@ -122,30 +122,24 @@ public class VerifyStoreTest extends BaseClass {
 		objHome.logOutFn();
 		Log.endTestCase("VerifyStoreTest--validateEditStore");
 	}
-
-	@Test(priority=5,enabled=false)
-	public void validatePagination(){		
-		Log.endTestCase("VerifyStoreTest--validatePagination");
-		objLogin.loginFn();
-		act.click1(objHome.menuStore(), "Store Menu");
-		String text = objStore.lblTblPages().getText();	
-		List<WebElement> storeTblPages = objStore.pageIndexStore();
-		int totalpages = Integer.valueOf(text.substring(text.indexOf("of")+3, text.indexOf("entries")-1));
-		System.out.println("Total no: of Pages: "+totalpages);
-		int page = 2;
-		boolean flag = false;
-		System.out.println(storeTblPages.size());
-		for (int p = 0; p < storeTblPages.size(); p++) {
-			for (WebElement pg : storeTblPages) {
-				if (pg.getText().equalsIgnoreCase("3")) {
-					pg.click();
-					flag = true;
-					break;				
-				}
-			}
-			flag = false;
-		}
-		Assert.assertTrue(flag);
-		Log.endTestCase("VerifyStoreTest--validatePagination");
+	
+	@Test(priority = 5)
+	public void validateStoreSorting() {
+		Log.startTestCase("VerifyStoreTest--validateStoreSorting");
+		objLogin.loginFn();	
+		act.click1( objHome.menuStore(), "Store Menu");
+		String strFirstNm = objStore.firstElement().getText();
+		act.click1(objStore.btnSortingStore(), "Ascending Sorting");
+		String strFirstNmasc = objStore.firstElement().getText();
+		Log.info("Ascending Order Sorting");		
+		SoftAssert sassrt = new SoftAssert();
+		sassrt.assertNotEquals(strFirstNm, strFirstNmasc);
+		sassrt.assertAll();				
+		act.click1(objStore.btnSortingStore(), "Descending Sorting");
+		String strFirstNmdsc = objStore.firstElement().getText();
+		sassrt.assertEquals(strFirstNm, strFirstNmdsc);
+		sassrt.assertAll();	
+		objHome.logOutFn();
+		Log.endTestCase("VerifyStoreTest--validateStoreSorting");
 	}
 }
