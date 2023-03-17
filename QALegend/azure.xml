@@ -5,11 +5,11 @@
 		<listener class-name="com.POS.Utilities.Listeners"></listener>
 	</listeners>
 	<parameter name="Browser" value="Edge"></parameter>
-  <test thread-count="5" name="TestRun">
-    <classes>    
-      <class name="com.POS.Testcases.VerifyUserLoginTest"/>
-      <class name="com.POS.Testcases.VerifyCategoryTest"/>
-      <class name="com.POS.Testcases.VerifyStoreTest"/>
-    </classes>
-  </test> <!-- TestRun -->
+	<test thread-count="5" name="TestRun">
+		<classes>
+			<class name="com.POS.Testcases.VerifyUserLoginTest" />
+			<class name="com.POS.Testcases.VerifyCategoryTest" />
+			<class name="com.POS.Testcases.VerifyWaiterTest" />
+		</classes>
+	</test> <!-- TestRun -->
 </suite> <!-- RestaurantSuite -->

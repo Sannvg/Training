@@ -3,7 +3,7 @@
 <suite name="RestaurantSuite">
 	<listeners>
 		<listener class-name="com.POS.Utilities.Listeners"></listener>
-	</listeners>	
+	</listeners>
 	<test thread-count="5" name="EdgeTest">
 		<parameter name="Browser" value="Edge"></parameter>
 		<classes>
@@ -16,7 +16,6 @@
 			</class>
 		</classes>
 	</test>
-	
 	<test thread-count="5" name="FirefoxTest">
 		<parameter name="Browser" value="FireFox"></parameter>
 		<classes>

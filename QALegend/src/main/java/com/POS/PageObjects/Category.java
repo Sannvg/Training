@@ -21,12 +21,12 @@ public class Category extends BaseClass {
 	List<WebElement> tblCatHeaders;
 	@FindBy(xpath = "//button[@data-target='#Addcategory']")
 	WebElement btnAddCat;
-	@FindBy(xpath="//ul[@class='pagination']//li")
+	@FindBy(xpath = "//ul[@class='pagination']//li")
 	List<WebElement> tblPaginationCat;
-	@FindBy(css="#Table_info")
+	@FindBy(css = "#Table_info")
 	WebElement lblTblInfo;
-	@FindBy(xpath="//li[@class='paginate_button active']//a")
-	WebElement pageActive;	
+	@FindBy(xpath = "//li[@class='paginate_button active']//a")
+	WebElement pageActive;
 	@FindBy(xpath = "(//a[@data-original-title='Delete'])[1]")
 	WebElement deleteCat;
 	@FindBy(xpath = "(//a[@data-original-title='Edit'])[1]")
@@ -39,17 +39,18 @@ public class Category extends BaseClass {
 	WebElement firstelement;
 	@FindBy(xpath = "//td[@class='dataTables_empty']")
 	WebElement noRecords;
-	//Add Category
+	// Add Category
 	@FindBy(id = "CategoryName")
 	WebElement txtCatName;
 	@FindBy(xpath = "//button[text()='Close']")
 	WebElement btnCloseAddCat;
 	@FindBy(xpath = "//button[text()='Submit']")
 	WebElement btnSubmitAddCat;
-	
+
 	public Category() {
 		PageFactory.initElements(getDriver(), this);
 	}
+
 	public WebElement drpShowCategory() {
 		return drpShowCategory;
 	}
@@ -77,6 +78,7 @@ public class Category extends BaseClass {
 	public WebElement descendingCat() {
 		return descendingCat;
 	}
+
 	public WebElement btnAddCat() {
 		return btnAddCat;
 	}
@@ -84,12 +86,15 @@ public class Category extends BaseClass {
 	public List<WebElement> pageIndexCat() {
 		return tblPaginationCat;
 	}
+
 	public WebElement lblTblPages() {
 		return lblTblInfo;
 	}
+
 	public WebElement pageActive() {
 		return pageActive;
 	}
+
 	public WebElement deleteCat() {
 		return deleteCat;
 	}
@@ -97,9 +102,11 @@ public class Category extends BaseClass {
 	public WebElement editCat() {
 		return editCat;
 	}
+
 	public WebElement txtCatName() {
 		return txtCatName;
 	}
+
 	public WebElement btnCloseAddCat() {
 		return btnCloseAddCat;
 	}

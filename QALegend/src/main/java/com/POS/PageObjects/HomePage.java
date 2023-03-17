@@ -29,7 +29,7 @@ public class HomePage extends BaseClass {
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/categories']")
 	WebElement menuCatPdt;
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/settings?tab=setting']")
-	WebElement menuSettings;	
+	WebElement menuSettings;
 	@FindBy(css = ".img-circle.topbar-userpic.hidden-xs")
 	WebElement imgLogin;
 	@FindBy(xpath = "//span[@class='hidden-xs'][1]")
@@ -76,15 +76,19 @@ public class HomePage extends BaseClass {
 	public WebElement menuCustomer() {
 		return menuCustomer;
 	}
+
 	public WebElement menuCategory() {
 		return menuCategory;
 	}
+
 	public WebElement menuCatPdt() {
 		return menuCatPdt;
 	}
+
 	public WebElement menuSettings() {
 		return menuSettings;
 	}
+
 	public WebElement menuSupplier() {
 		return menuSupplier;
 	}
@@ -121,7 +125,7 @@ public class HomePage extends BaseClass {
 		List<WebElement> languagelist = languageList();
 		for (WebElement l : languagelist) {
 			if (l.getText().equalsIgnoreCase(language)) {
-				act.explicitWait(getDriver(),languageSelected(), Duration.ofSeconds(10));
+				act.explicitWait(getDriver(), languageSelected(), Duration.ofSeconds(10));
 				act.click1(l, l.getText());
 			}
 		}

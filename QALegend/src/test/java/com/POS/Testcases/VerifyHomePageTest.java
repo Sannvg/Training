@@ -10,8 +10,8 @@ import com.POS.BaseClass.BaseClass;
 import com.POS.Utilities.Log;
 
 public class VerifyHomePageTest extends BaseClass {
-	@Test(priority = 1,groups= {"Smoke"})
-	public void validateElementsDisplay() {		
+	@Test(priority = 1, groups = { "Smoke" })
+	public void validateElementsDisplay() {
 		Log.startTestCase("VerifyHomePageTest--displayElements");
 		objLogin.loginFn();
 		act.findElement(getDriver(), objHome.logoImage());
@@ -27,27 +27,27 @@ public class VerifyHomePageTest extends BaseClass {
 		Log.endTestCase("VerifyHomePageTest--displayElements");
 	}
 
-	@Test(priority = 2,groups= {"Smoke"})
-	public void validateLanguageSelection(){		
-		Log.startTestCase("VerifyHomePageTest--languageListed");	
+	@Test(priority = 2, groups = { "Smoke" })
+	public void validateLanguageSelection() {
+		Log.startTestCase("VerifyHomePageTest--languageListed");
 		objLogin.loginFn();
 		Assert.assertTrue(objHome.storeMenu().isDisplayed());
-		act.explicitWait(getDriver(),objHome.languageSelected(), Duration.ofSeconds(10));	
-		act.click1(objHome.languageSelected(), "Language Dropdown");			
-		objHome.languageSelection(" Spanish");		
-		act.explicitWait(getDriver(),objHome.languageSelected(), Duration.ofSeconds(10));	
+		act.explicitWait(getDriver(), objHome.languageSelected(), Duration.ofSeconds(10));
+		act.click1(objHome.languageSelected(), "Language Dropdown");
+		objHome.languageSelection(" Spanish");
+		act.explicitWait(getDriver(), objHome.languageSelected(), Duration.ofSeconds(10));
 		Log.info("Home Page Menu Check");
 		act.click1(objHome.languageSelected(), "Language DropDown");
-		objHome.languageSelection(" English");	
+		objHome.languageSelection(" English");
 		Assert.assertTrue(objHome.languageSelected().isDisplayed());
 		objHome.logOutFn();
 		Log.endTestCase("VerifyHomePageTest--languageListed");
 	}
 
-	@Test(priority = 3,groups= {"Smoke"})
-	public void validateMenuDisplay() {	
+	@Test(priority = 3, groups = { "Smoke" })
+	public void validateMenuDisplay() {
 		Log.startTestCase("VerifyHomePageTest--menuElements");
-		objLogin.loginFn();		
+		objLogin.loginFn();
 		List<WebElement> menuHome = objHome.menuList();
 		List<String> menuList = new ArrayList<String>();
 		menuList.add("POS");
@@ -72,11 +72,11 @@ public class VerifyHomePageTest extends BaseClass {
 		Assert.assertFalse(flag);
 		objHome.logOutFn();
 		Log.endTestCase("VerifyHomePageTest--menuElements");
-		
+
 	}
 
-	@Test(priority = 4,groups= {"Smoke"})
-	public void validateMenuClick() {				
+	@Test(priority = 4, groups = { "Smoke" })
+	public void validateMenuClick() {
 		Log.startTestCase("VerifyHomePageTest--menuElementsClick");
 		objLogin.loginFn();
 		Log.info("Home Page Menu Click");
@@ -92,7 +92,7 @@ public class VerifyHomePageTest extends BaseClass {
 		Assert.assertTrue(objCustomer.tableCustomer().isDisplayed());
 		act.click1(objHome.menuPeople(), "People Menu");
 		act.click1(objHome.menuSupplier(), "Supplier Menu");
-		Assert.assertTrue(objSupplier.tableSupplier().isDisplayed());	
+		Assert.assertTrue(objSupplier.tableSupplier().isDisplayed());
 		objHome.logOutFn();
 		Log.endTestCase("VerifyHomePageTest--menuElementsClick");
 	}

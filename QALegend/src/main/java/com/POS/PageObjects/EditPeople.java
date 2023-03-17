@@ -7,12 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 import com.POS.BaseClass.BaseClass;
 
 public class EditPeople extends BaseClass {
-	//Waiter
+	// Waiter
 	@FindBy(css = "input[id='WaiterName']")
 	WebElement txtEditWNm;
 	@FindBy(css = "input[id='WaiterPhone']")
 	WebElement txtEditWPhn;
-	@FindBy(css ="input[id='WaiterEmail']")
+	@FindBy(css = "input[id='WaiterEmail']")
 	WebElement txtEditWEm;
 	@FindBy(css = "select[id='WaiterStore']")
 	WebElement drpEditWStore;
@@ -20,7 +20,7 @@ public class EditPeople extends BaseClass {
 	WebElement btnEditWSubmit;
 	@FindBy(xpath = ".fa.fa-arrow-left")
 	WebElement btnEditWBk;
-	
+
 	public EditPeople() {
 		PageFactory.initElements(getDriver(), this);
 	}
@@ -44,8 +44,9 @@ public class EditPeople extends BaseClass {
 	public WebElement btnEditWSubmit() {
 		return btnEditWSubmit;
 	}
+
 	public WebElement btnEditWBk() {
 		return btnEditWBk;
 	}
-	
+
 }

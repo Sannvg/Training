@@ -48,16 +48,16 @@ public class BaseClass {
 	public static EditPeople objEditPeople;
 	public static Category objCategory;
 	public static Settings objSettings;
-	
+
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<RemoteWebDriver>();
 
-	@BeforeSuite(groups={"Smoke"})
+	@BeforeSuite(groups = { "Smoke" })
 	public void loadFiles() {
 		DOMConfigurator.configure("log4j.xml");
 		ExtentReport.setExtent();
 	}
 
-	@BeforeTest(groups={"Smoke"})
+	@BeforeTest(groups = { "Smoke" })
 	public void loadConfig() {
 		try {
 			prop = new Properties();
@@ -70,11 +70,12 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 	}
+
 	@Parameters("Browser")
-	@BeforeMethod(groups={"Smoke"})
+	@BeforeMethod(groups = { "Smoke" })
 	public void beforeMethods(String strBrowser) {
 		launchApp(strBrowser);
-		objLogin = new Login();		
+		objLogin = new Login();
 		objHome = new HomePage();
 		objPdt = new Product();
 		objAddPdt = new AddProduct();
@@ -87,34 +88,34 @@ public class BaseClass {
 		objCategory = new Category();
 		objSettings = new Settings();
 	}
-	
+
 	public static WebDriver getDriver() {
 		return driver.get();
 	}
 
 	public void launchApp(String browserName) {
-		//String browserName = prop.getProperty("Browser");
+		// String browserName = prop.getProperty("Browser");
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			driver.set(new ChromeDriver());
 		} else if (browserName.equalsIgnoreCase("FireFox")) {
-			driver.set(new FirefoxDriver());			
-		} else if (browserName.equalsIgnoreCase("Edge")) {			
-			driver.set(new EdgeDriver());	
-		}		
+			driver.set(new FirefoxDriver());
+		} else if (browserName.equalsIgnoreCase("Edge")) {
+			driver.set(new EdgeDriver());
+		}
 		getDriver().manage().window().maximize();
-		act = new Action();		
-		act.implicitWait(getDriver(), 10);// Implicit TimeOuts	
-		act.pageLoadTimeOut(getDriver(), 30);	// PageLoad TimeOuts
+		act = new Action();
+		act.implicitWait(getDriver(), 10);// Implicit TimeOuts
+		act.pageLoadTimeOut(getDriver(), 30); // PageLoad TimeOuts
 		getDriver().get(prop.getProperty("Url"));
-	}	
-	
-	@AfterMethod(groups= {"Smoke"})
-	public void afterMethod() {		
+	}
+
+	@AfterMethod(groups = { "Smoke" })
+	public void afterMethod() {
 		getDriver().quit();
 	}
 
 	@AfterSuite
-	public void tearDown() {		
+	public void tearDown() {
 		ExtentReport.endReport();
 	}
 

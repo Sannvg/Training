@@ -11,9 +11,8 @@
 		</classes>
 	</test> <!-- EdgeTest -->
 	<test thread-count="5" name="Test2">
-		<classes>
-			<class name="com.POS.BaseClass.BaseClass" />
-			<class name="com.POS.Testcases.VerifyHomePageTest" />
+		<classes>			
+			<class name="com.POS.Testcases.VerifyCategoryTest" />
 		</classes>
 	</test> <!-- FirefoxTest -->
 </suite> <!-- RestaurantSuite -->

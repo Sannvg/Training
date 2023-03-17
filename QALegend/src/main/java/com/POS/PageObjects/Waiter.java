@@ -19,7 +19,7 @@ public class Waiter extends BaseClass {
 	@FindBy(xpath = "(//a[@data-toggle='popover'])[1]")
 	WebElement deleteWaiter;
 	@FindBy(xpath = "//div[@class='popover fade left in']//div//a")
-	WebElement btnDltConfirm;		
+	WebElement btnDltConfirm;
 	@FindBy(xpath = "(//a[@data-original-title='Edit'])[1]")
 	WebElement editWaiter;
 	// Add Waiter
@@ -34,7 +34,7 @@ public class Waiter extends BaseClass {
 	@FindBy(xpath = "//button[text()='Close']")
 	WebElement btnCloseAddWaiter;
 	@FindBy(xpath = "//button[text()='Submit']")
-	WebElement btnSubmitAddWaiter;	
+	WebElement btnSubmitAddWaiter;
 
 	public Waiter() {
 		PageFactory.initElements(getDriver(), this);
@@ -62,10 +62,12 @@ public class Waiter extends BaseClass {
 
 	public WebElement deleteWaiter() {
 		return deleteWaiter;
-	}	
+	}
+
 	public WebElement btnDltConfirm() {
 		return btnDltConfirm;
 	}
+
 	public WebElement editWaiter() {
 		return editWaiter;
 	}
@@ -93,7 +95,7 @@ public class Waiter extends BaseClass {
 	public WebElement waiterAddSubmit() {
 		return btnSubmitAddWaiter;
 	}
-	
+
 	public void beforefnWaiter() {
 		objLogin.loginFn();
 		act.click1(objHome.menuPeople(), "People Menu");

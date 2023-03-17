@@ -35,9 +35,9 @@ public class Product extends BaseClass {
 	WebElement lnkPrintMenu;
 	@FindBy(className = "pagination")
 	WebElement tblPaginationPdt;
-	
+
 	// Upload File Window
-	@FindBy(xpath="(//input[@id='ImageInput'])[2]")
+	@FindBy(xpath = "(//input[@id='ImageInput'])[2]")
 	WebElement btnUploadfile;
 	@FindBy(linkText = "Download Sample")
 	WebElement linkDownload;
@@ -45,7 +45,7 @@ public class Product extends BaseClass {
 	WebElement btnUFClose;
 	@FindBy(xpath = "(//button[@type='submit'])[3]")
 	WebElement btnUFSubmit;
-	
+
 	// Print Menu
 	@FindBy(xpath = "//button[@onclick='PrintTicket()']/preceding-sibling::button")
 	WebElement btnPrintMenuClose;
@@ -112,8 +112,6 @@ public class Product extends BaseClass {
 		return tblPaginationPdt;
 	}
 
-	
-
 	public WebElement uploadImageFile() {
 		return btnUploadfile;
 	}
@@ -130,7 +128,6 @@ public class Product extends BaseClass {
 		return btnUFSubmit;
 	}
 
-	
 	public WebElement printMenuClose() {
 		return btnPrintMenuClose;
 	}

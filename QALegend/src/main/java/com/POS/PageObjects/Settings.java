@@ -8,8 +8,8 @@ import com.POS.BaseClass.BaseClass;
 
 public class Settings extends BaseClass {
 	@FindBy(xpath = "//a[@href='#users']")
-	WebElement btnUsers;	
-	@FindBy(xpath = "button[data-target='#AddUser']")
+	WebElement btnUsers;
+	@FindBy(css = "button[data-target='#AddUser']")
 	WebElement btnAddUser;
 	@FindBy(id = "username")
 	WebElement txtUserName;
@@ -35,9 +35,9 @@ public class Settings extends BaseClass {
 	WebElement btnInputFile;
 	@FindBy(xpath = "(//button[@type='submit'])[2]")
 	WebElement btnSubmit;
-	@FindBy(xpath ="(//button[text()='Close'])[1]")
+	@FindBy(xpath = "(//button[text()='Close'])[1]")
 	WebElement btnClose;
-	
+
 	public Settings() {
 		PageFactory.initElements(getDriver(), this);
 	}
@@ -45,42 +45,57 @@ public class Settings extends BaseClass {
 	public WebElement btnUsers() {
 		return btnUsers;
 	}
+
 	public WebElement btnAddUser() {
 		return btnAddUser;
 	}
+
+	public WebElement txtUserName() {
+		return txtUserName;
+	}
+
 	public WebElement txtFirstNm() {
 		return txtFirstNm;
 	}
+
 	public WebElement txtLastNm() {
 		return txtLastNm;
 	}
+
 	public WebElement rbtnAdmin() {
 		return rbtnAdmin;
 	}
+
 	public WebElement rbtnSales() {
 		return rbtnSales;
 	}
+
 	public WebElement rbtnWaiter() {
 		return rbtnWaiter;
 	}
+
 	public WebElement txtEmail() {
 		return txtEmail;
 	}
+
 	public WebElement txtPassword() {
 		return txtPassword;
 	}
+
 	public WebElement txtCPassword() {
 		return txtCPassword;
 	}
+
 	public WebElement btnInputFile() {
 		return btnInputFile;
 	}
+
 	public WebElement btnSubmit() {
 		return btnSubmit;
 	}
+
 	public WebElement btnClose() {
 		return btnClose;
 	}
-	
-	
+
 }

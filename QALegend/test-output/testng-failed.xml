@@ -19,48 +19,6 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.POS.Testcases.VerifyStoreTest -->
-      <class name="com.POS.Testcases.VerifyStoreManageTest">
-        <methods>
-          <include name="validateDeleteStore"/>
-          <include name="beforeMethods"/>
-          <include name="loadFiles"/>
-          <include name="loadConfig"/>
-          <include name="afterMethod"/>
-          <include name="validateDeleteStoreTbl"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyStoreManageTest -->
-      <class name="com.POS.Testcases.VerifyWaiterTest">
-        <methods>
-          <include name="beforeMethods"/>
-          <include name="loadFiles"/>
-          <include name="loadConfig"/>
-          <include name="validateEditWaiter"/>
-          <include name="afterMethod"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyWaiterTest -->
-      <class name="com.POS.Testcases.VerifySettingsTest">
-        <methods>
-          <include name="beforeMethods"/>
-          <include name="loadFiles"/>
-          <include name="loadConfig"/>
-          <include name="afterMethod"/>
-          <include name="tearDown"/>
-          <include name="validateAddUser"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifySettingsTest -->
-      <class name="com.POS.Testcases.VerifyProductPageTest">
-        <methods>
-          <include name="beforeMethods"/>
-          <include name="validateAddProduct"/>
-          <include name="loadFiles"/>
-          <include name="validateDownloadCSV"/>
-          <include name="loadConfig"/>
-          <include name="afterMethod"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.POS.Testcases.VerifyProductPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [RestaurantSuite] -->

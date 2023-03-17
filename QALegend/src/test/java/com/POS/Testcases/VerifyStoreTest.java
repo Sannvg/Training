@@ -3,8 +3,6 @@ package com.POS.Testcases;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -29,7 +27,7 @@ public class VerifyStoreTest extends BaseClass {
 		Log.endTestCase("VerifyStoreTest--validateShowCount");
 	}
 
-	@Test(priority = 0, groups = { "Smoke" },enabled=false)
+	@Test(priority = 0, groups = { "Smoke" })
 	public void validateTableHeaders() {
 		Log.startTestCase("VerifyStoreTest--validateTableHeaders");
 		objLogin.loginFn();
@@ -122,23 +120,24 @@ public class VerifyStoreTest extends BaseClass {
 		objHome.logOutFn();
 		Log.endTestCase("VerifyStoreTest--validateEditStore");
 	}
-	
+
 	@Test(priority = 5)
 	public void validateStoreSorting() {
 		Log.startTestCase("VerifyStoreTest--validateStoreSorting");
-		objLogin.loginFn();	
-		act.click1( objHome.menuStore(), "Store Menu");
+		objLogin.loginFn();
+		act.click1(objHome.menuStore(), "Store Menu");
 		String strFirstNm = objStore.firstElement().getText();
-		act.click1(objStore.btnSortingStore(), "Ascending Sorting");
+		act.click1(objStore.btnAscSort(), "Ascending Sorting");
 		String strFirstNmasc = objStore.firstElement().getText();
-		Log.info("Ascending Order Sorting");		
+		Log.info("Ascending Sort Done");
 		SoftAssert sassrt = new SoftAssert();
 		sassrt.assertNotEquals(strFirstNm, strFirstNmasc);
-		sassrt.assertAll();				
-		act.click1(objStore.btnSortingStore(), "Descending Sorting");
+		sassrt.assertAll();
+		act.click1(objStore.btnDescSort(), "Descending Sorting");
+		Log.info("Descending Sort Done");
 		String strFirstNmdsc = objStore.firstElement().getText();
 		sassrt.assertEquals(strFirstNm, strFirstNmdsc);
-		sassrt.assertAll();	
+		sassrt.assertAll();
 		objHome.logOutFn();
 		Log.endTestCase("VerifyStoreTest--validateStoreSorting");
 	}

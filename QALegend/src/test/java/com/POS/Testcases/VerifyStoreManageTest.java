@@ -24,7 +24,7 @@ public class VerifyStoreManageTest extends BaseClass {
 		objHome.logOutFn();
 		Log.endTestCase("VerifyStoreManageTest-validateAddZone");
 	}
-	
+
 	@Test(priority = 2)
 	public void validateEditZone() {
 		Log.startTestCase("VerifyStoreManageTest-validateEditZone");
@@ -80,7 +80,7 @@ public class VerifyStoreManageTest extends BaseClass {
 		Assert.assertEquals(objMngStore.lblStoreZone().getText(), "Store Zones");
 		objHome.logOutFn();
 		Log.endTestCase("VerifyStoreManageTest-validateDeleteStoreTbl");
-	}	
+	}
 
 	@Test(priority = 6)
 	public void validateDeleteZone() {
@@ -93,7 +93,7 @@ public class VerifyStoreManageTest extends BaseClass {
 		objHome.logOutFn();
 		Log.endTestCase("VerifyStoreManageTest-validateDeleteZone");
 	}
-	
+
 	@Test(priority = 7)
 	public void validateDeleteStore() {
 		Log.startTestCase("VerifyStoreTest--validateDeleteStore");

@@ -130,12 +130,12 @@ public class StoreManage extends BaseClass {
 	public WebElement btnEditStoreTblSubmit() {
 		return editStoreTblSubmit;
 	}
-	
-	public void beforefn(){
-		objLogin.loginFn();	
-		act.click1(objStore.menuStore(), "Store Menu");			
+
+	public void beforefn() {
+		objLogin.loginFn();
+		act.click1(objStore.menuStore(), "Store Menu");
 		act.click1(objStore.searchStore(), "Search Store");
-		act.type(objStore.searchStore(), "OBS Store");	
-		act.click1(objStore.manageStore(), "Manage Store ");	
+		act.type(objStore.searchStore(), "OBS Store");
+		act.click1(objStore.manageStore(), "Manage Store ");
 	}
 }

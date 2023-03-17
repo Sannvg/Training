@@ -21,12 +21,12 @@ public class Store extends BaseClass {
 	List<WebElement> tblStoreHeaders;
 	@FindBy(xpath = "//button[@data-target='#AddStore']")
 	WebElement bnAddStore;
-	@FindBy(xpath="//ul[@class='pagination']//li")
+	@FindBy(xpath = "//ul[@class='pagination']//li")
 	List<WebElement> tblPaginationStore;
-	@FindBy(css="#Table_info")
+	@FindBy(css = "#Table_info")
 	WebElement lblTblInfo;
-	@FindBy(xpath="//li[@class='paginate_button active']//a")
-	WebElement pageActive;	
+	@FindBy(xpath = "//li[@class='paginate_button active']//a")
+	WebElement pageActive;
 	@FindBy(xpath = "(//a[@data-original-title='Delete'])[1]")
 	WebElement deleteStore;
 	@FindBy(xpath = "(//a[@data-original-title='Edit'])[1]")
@@ -34,12 +34,14 @@ public class Store extends BaseClass {
 	@FindBy(xpath = "(//a[@data-original-title='manage Tables'])[1]")
 	WebElement manageStore;
 	@FindBy(xpath = "//th[@aria-sort='ascending']")
-	WebElement btnSortingStore;
+	WebElement btnAscSort;
+	@FindBy(xpath = "//th[@aria-sort='descending']")
+	WebElement btnDescSort;
 	@FindBy(xpath = "//td[@class='sorting_1']")
 	WebElement firstelement;
 	@FindBy(xpath = "//td[@class='dataTables_empty']")
 	WebElement noRecords;
-	//Add Store
+	// Add Store
 	@FindBy(id = "StoreName")
 	WebElement txtStoreName;
 	@FindBy(id = "email")
@@ -94,9 +96,11 @@ public class Store extends BaseClass {
 	public List<WebElement> pageIndexStore() {
 		return tblPaginationStore;
 	}
+
 	public WebElement lblTblPages() {
 		return lblTblInfo;
 	}
+
 	public WebElement pageActive() {
 		return pageActive;
 	}
@@ -114,8 +118,12 @@ public class Store extends BaseClass {
 		return manageStore;
 	}
 
-	public WebElement btnSortingStore() {
-		return btnSortingStore;
+	public WebElement btnAscSort() {
+		return btnAscSort;
+	}
+
+	public WebElement btnDescSort() {
+		return btnDescSort;
 	}
 
 	public WebElement firstElement() {
@@ -125,6 +133,7 @@ public class Store extends BaseClass {
 	public WebElement noRecords() {
 		return noRecords;
 	}
+
 //Add Store
 	public WebElement storeName() {
 		return txtStoreName;
