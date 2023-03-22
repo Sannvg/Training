@@ -1,4 +1,4 @@
-package com.POS.Testcases;
+package com.POS.TestCases;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -16,8 +16,8 @@ public class VerifyProductPageTest extends BaseClass {
 		Log.startTestCase("VerifyProductPageTest--validateShowPdtTblCount");
 		objLogin.loginFn();
 		act.click1(objHome.menuPdt(), "Product Menu");
-		act.click1(objPdt.showProduct(), "Show Product");
-		act.selectByVisibleText("50", objPdt.showProduct());
+		act.click1(objPdt.drpShowProduct(), "Show Product");
+		act.selectByVisibleText("50", objPdt.drpShowProduct());
 		Log.info("Selected show count");
 		int rwcount = act.getRowCount(objPdt.tableProduct());
 		System.out.println(rwcount);
@@ -34,10 +34,10 @@ public class VerifyProductPageTest extends BaseClass {
 		Log.startTestCase("VerifyProductPageTest--validateFilterBySupplier");
 		objLogin.loginFn();
 		act.click1(objHome.menuPdt(), "Product Menu");
-		act.click1(objPdt.supplierFilter(), "Supplier Filter");
-		act.selectByVisibleText("ObsTestSupplier", objPdt.supplierFilter());
+		act.click1(objPdt.drpFilterSupplier(), "Supplier Filter");
+		act.selectByVisibleText("ObsTestSupplier", objPdt.drpFilterSupplier());
 		Log.info("Selected Supplier");
-		act.click1(objPdt.applyFilter(), "Apply Filter");
+		act.click1(objPdt.btnApplyFilter(), "Apply Filter");
 		int rwcount = act.getRowCount(objPdt.tableProduct());
 		Assert.assertEquals(true, rwcount > 0);
 		objHome.logOutFn();
@@ -49,10 +49,10 @@ public class VerifyProductPageTest extends BaseClass {
 		Log.startTestCase("VerifyProductPageTest--validateFilterByPdtType");
 		objLogin.loginFn();
 		act.click1(objHome.menuPdt(), "Product Menu");
-		act.click1(objPdt.pdtTypeFilter(), "Product Type Filter");
-		act.selectByVisibleText("Standard", objPdt.pdtTypeFilter());
+		act.click1(objPdt.drpFilterPdtType(), "Product Type Filter");
+		act.selectByVisibleText("Standard", objPdt.drpFilterPdtType());
 		Log.info("Selected Product Type");
-		act.click1(objPdt.applyFilter(), "Apply Filter");
+		act.click1(objPdt.btnApplyFilter(), "Apply Filter");
 		int rwcount = act.getRowCount(objPdt.tableProduct());
 		Assert.assertEquals(true, rwcount > 0);
 		objHome.logOutFn();
@@ -64,12 +64,12 @@ public class VerifyProductPageTest extends BaseClass {
 		Log.startTestCase("VerifyProductPageTest--validateFilterBySupPdtType");
 		objLogin.loginFn();
 		act.click1(objHome.menuPdt(), "Product Menu");
-		act.click1(objPdt.supplierFilter(), "Supplier Filter");
-		act.selectByValue(objPdt.supplierFilter(), "ObsTestSupplier");
-		act.click1(objPdt.pdtTypeFilter(), "Product Type Filter");
-		act.selectByValue(objPdt.pdtTypeFilter(), "Standard");
+		act.click1(objPdt.drpFilterSupplier(), "Supplier Filter");
+		act.selectByValue(objPdt.drpFilterSupplier(), "ObsTestSupplier");
+		act.click1(objPdt.drpFilterPdtType(), "Product Type Filter");
+		act.selectByValue(objPdt.drpFilterPdtType(), "Standard");
 		Log.info("Selected Supplier and Product Type");
-		act.click1(objPdt.applyFilter(), "Apply Filter");
+		act.click1(objPdt.btnApplyFilter(), "Apply Filter");
 		int rwcount = act.getRowCount(objPdt.tableProduct());
 		Assert.assertEquals(true, rwcount > 0);
 		objHome.logOutFn();
@@ -81,24 +81,24 @@ public class VerifyProductPageTest extends BaseClass {
 		Log.startTestCase("VerifyProductPageTest--validateDownloadCSV");
 		objLogin.loginFn();
 		act.click1(objHome.menuPdt(), "Product Menu");
-		act.click1(objPdt.downloadFile(), "Download File");
+		act.click1(objPdt.lnkDownload(), "Download File");
 		act.explicitWait(getDriver(), objPdt.tableProduct(), Duration.ofSeconds(10));
 		Assert.assertTrue(objPdt.tableProduct().isDisplayed());
 		objHome.logOutFn();
 		Log.endTestCase("VerifyProductPageTest--validateDownloadCSV");
 	}
 
-	@Test(priority = 6, retryAnalyzer = com.POS.Utilities.RetryAnalyzer.class)
+	@Test(priority = 6)
 	public void validateUploadCSV() {
 		Log.startTestCase("VerifyProductPageTest--validateUploadCSV");
 		objLogin.loginFn();
 		act.click1(objHome.menuPdt(), "Product Menu");
-		act.click1(objPdt.uploadFile(), "Upload File");
-		act.click1(objPdt.uploadImageFile(), "Choose File to Upload");
-		act.type(objPdt.uploadImageFile(), System.getProperty("user.dir") + "\\Files\\TestPdt.jpg");
+		act.click1(objPdt.lnkUpload(), "Upload File");
+		act.click1(objPdt.btnUploadfile(), "Choose File to Upload");
+		act.type(objPdt.btnUploadfile(), System.getProperty("user.dir") + "\\Files\\TestPdt.jpg");
 		Log.info("Entered file to upload");
-		act.click1(objPdt.uploadFileSubmit(), "File Upload Submit");
-		Assert.assertTrue(objPdt.addPdt().isDisplayed());
+		act.click1(objPdt.btnUFSubmit(), "File Upload Submit");
+		Assert.assertTrue(objPdt.btnAddPdt().isDisplayed());
 		objHome.logOutFn();
 		Log.endTestCase("VerifyProductPageTest--validateUploadCSV");
 	}
@@ -108,13 +108,13 @@ public class VerifyProductPageTest extends BaseClass {
 		Log.startTestCase("VerifyProductPageTest--validatePrintMenu");
 		objLogin.loginFn();
 		act.click1(objHome.menuPdt(), "Product Menu");
-		act.click1(objPdt.printMenu(), "Print Menu");
+		act.click1(objPdt.lnkPrintMenu(), "Print Menu");
 		Thread.sleep(3000);
 		Robot rb = new Robot();
 		rb.keyPress(KeyEvent.VK_ENTER);
 		rb.keyRelease(KeyEvent.VK_ENTER);
 		act.switchToOldWindow(getDriver());
-		act.click1(objPdt.printMenuClose(), "Print Menu Close");
+		act.click1(objPdt.btnPrintMenuClose(), "Print Menu Close");
 		objHome.logOutFn();
 		Log.endTestCase("VerifyProductPageTest--validatePrintMenu");
 	}
@@ -124,26 +124,25 @@ public class VerifyProductPageTest extends BaseClass {
 		Log.startTestCase("VerifyProductPageTest--validateAddProduct");
 		objLogin.loginFn();
 		act.click1(objHome.menuPdt(), "Product Menu");
-		act.click1(objPdt.addPdt(), "Add Product");
-		ExcelRead data = new ExcelRead();
+		act.click1(objPdt.btnAddPdt(), "Add Product");
 		ArrayList excelData = data.getData("Product");
-		act.selectByValue(objAddPdt.pdtType(), (String) excelData.get(0));
-		act.type(objAddPdt.pdtCode(), (String) excelData.get(1));
-		act.type(objAddPdt.pdtName(), (String) excelData.get(2));
-		act.selectByValue(objAddPdt.pdtCategory(), (String) excelData.get(3));
-		act.selectByValue(objAddPdt.pdtSupplier(), (String) excelData.get(4));
-		act.type(objAddPdt.pdtPurchasePrice(), (String) excelData.get(5));
-		act.type(objAddPdt.pdtTax(), (String) excelData.get(6));
-		act.selectByValue(objAddPdt.pdtTaxType(), (String) excelData.get(7));
-		act.type(objAddPdt.pdtPrice(), (String) excelData.get(8));
-		act.type(objAddPdt.pdtUnit(), (String) excelData.get(9));
-		act.type(objAddPdt.pdtAlertqty(), (String) excelData.get(10));
-		act.type(objAddPdt.pdtOptions(), (String) excelData.get(11));
+		act.selectByValue(objAddPdt.drpPdtType(), (String) excelData.get(0));
+		act.type(objAddPdt.txtPdtCode(), (String) excelData.get(1));
+		act.type(objAddPdt.txtPdtName(), (String) excelData.get(2));
+		act.selectByValue(objAddPdt.drpCategory(), (String) excelData.get(3));
+		act.selectByValue(objAddPdt.drpSupplier(), (String) excelData.get(4));
+		act.type(objAddPdt.drpPurchasePrice(), (String) excelData.get(5));
+		act.type(objAddPdt.txtTax(), (String) excelData.get(6));
+		act.selectByValue(objAddPdt.drpTaxType(), (String) excelData.get(7));
+		act.selectByVisibleText((String) excelData.get(8),objAddPdt.drpPrice());
+		act.type(objAddPdt.txtUnit(), (String) excelData.get(9));
+		act.selectByVisibleText((String) excelData.get(10),objAddPdt.drpAlertQT());
+		act.type(objAddPdt.txtPdtOptions(), (String) excelData.get(11));
 		act.type(objAddPdt.pdtImageInput(), System.getProperty("user.dir") + "\\Files\\TestPdt.jpg");
-		act.type(objAddPdt.pdtDescription(), (String) excelData.get(12));
-		act.click1(objAddPdt.addPdtSubmit(), "Add Product Submit");
-		act.fluentWait(getDriver(), objPdt.searchPdt(), 5);
-		act.type(objPdt.searchPdt(), (String) excelData.get(0));
+		act.type(objAddPdt.txtPdtDesc(), (String) excelData.get(12));
+		act.click1(objAddPdt.btnPdtSubmit(), "Add Product Submit");	
+		act.click1(objPdt.txtSearchPdt(), "Search Product");
+		act.type(objPdt.txtSearchPdt(), (String) excelData.get(0));
 		int tblRowCnt = act.getRowCount(objPdt.tableProduct());
 		Assert.assertTrue(tblRowCnt > 0, "Product is added");
 		objHome.logOutFn();
@@ -151,12 +150,13 @@ public class VerifyProductPageTest extends BaseClass {
 	}
 
 	@Test(priority = 9)
-	public void validateSearchPdt() {
+	public void validateSearchPdt() throws Exception {
 		Log.startTestCase("VerifyProductPageTest--validateSearchPdt");
 		objLogin.loginFn();
 		act.click1(objHome.menuPdt(), "Product Menu");
-		act.click1(objPdt.searchPdt(), "Search Product");
-		act.type(objPdt.searchPdt(), "OBS");
+		act.click1(objPdt.txtSearchPdt(), "Search Product");
+		ArrayList excelData = data.getData("Product");
+		act.type(objPdt.txtSearchPdt(), (String) excelData.get(2));
 		Log.info("Search product entered");
 		int tblRowCnt = act.getRowCount(objPdt.tableProduct());
 		Assert.assertTrue(tblRowCnt > 0, "Search Product is displayed");

@@ -7,44 +7,44 @@ import com.POS.BaseClass.BaseClass;
 
 public class Waiter extends BaseClass {
 	@FindBy(css = "select[name='Table_length']")
-	WebElement drpShowWaiter;
+	private WebElement drpShowWaiter;
 	@FindBy(css = "input[type='search']")
-	WebElement txtSearchWaiter;
+	private WebElement txtSearchWaiter;
 	@FindBy(css = "table[id='Table']")
-	WebElement tblWaiter;
+	private WebElement tblWaiter;
 	@FindBy(xpath = "//button[@data-target='#AddWaiter']")
-	WebElement bnAddWaiter;
+	private WebElement btnAddWaiter;
 	@FindBy(className = "pagination")
-	WebElement tblPaginationWaiter;
+	private WebElement tblPaginationWaiter;
 	@FindBy(xpath = "(//a[@data-toggle='popover'])[1]")
-	WebElement deleteWaiter;
+	private WebElement deleteWaiter;
 	@FindBy(xpath = "//div[@class='popover fade left in']//div//a")
-	WebElement btnDltConfirm;
+	private WebElement btnDltConfirm;
 	@FindBy(xpath = "(//a[@data-original-title='Edit'])[1]")
-	WebElement editWaiter;
+	private WebElement btneditWaiter;
 	// Add Waiter
 	@FindBy(id = "WaiterName")
-	WebElement txtWaiterName;
+	private WebElement txtWaiterName;
 	@FindBy(id = "WaiterPhone")
-	WebElement txtWaiterPhone;
+	private WebElement txtWaiterPhone;
 	@FindBy(id = "WaiterEmail")
-	WebElement txtWaiterEmail;
+	private WebElement txtWaiterEmail;
 	@FindBy(id = "WaiterStore")
-	WebElement drpWaiterStore;
+	private WebElement drpWaiterStore;
 	@FindBy(xpath = "//button[text()='Close']")
-	WebElement btnCloseAddWaiter;
+	private WebElement btnCloseAddWaiter;
 	@FindBy(xpath = "//button[text()='Submit']")
-	WebElement btnSubmitAddWaiter;
+	private WebElement btnSubmitAddWaiter;
 
 	public Waiter() {
 		PageFactory.initElements(getDriver(), this);
 	}
 
-	public WebElement showWaiterFilter() {
+	public WebElement drpShowWaiter() {
 		return drpShowWaiter;
 	}
 
-	public WebElement searchWaiter() {
+	public WebElement txtSearchWaiter() {
 		return txtSearchWaiter;
 	}
 
@@ -52,8 +52,8 @@ public class Waiter extends BaseClass {
 		return tblWaiter;
 	}
 
-	public WebElement addWaiter() {
-		return bnAddWaiter;
+	public WebElement btnAddWaiter() {
+		return btnAddWaiter;
 	}
 
 	public WebElement pageIndexWaiter() {
@@ -68,31 +68,31 @@ public class Waiter extends BaseClass {
 		return btnDltConfirm;
 	}
 
-	public WebElement editWaiter() {
-		return editWaiter;
+	public WebElement btneditWaiter() {
+		return btneditWaiter;
 	}
 
-	public WebElement waiterName() {
+	public WebElement txtWaiterName() {
 		return txtWaiterName;
 	}
 
-	public WebElement waiterPhone() {
+	public WebElement txtWaiterPhone() {
 		return txtWaiterPhone;
 	}
 
-	public WebElement waiterEmail() {
+	public WebElement txtWaiterEmail() {
 		return txtWaiterEmail;
 	}
 
-	public WebElement waiterStore() {
+	public WebElement drpWaiterStore() {
 		return drpWaiterStore;
 	}
 
-	public WebElement waiterAddClose() {
+	public WebElement btnCloseAddWaiter() {
 		return btnCloseAddWaiter;
 	}
 
-	public WebElement waiterAddSubmit() {
+	public WebElement btnSubmitAddWaiter() {
 		return btnSubmitAddWaiter;
 	}
 

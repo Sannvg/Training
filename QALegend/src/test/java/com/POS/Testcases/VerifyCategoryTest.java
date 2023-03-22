@@ -1,4 +1,4 @@
-package com.POS.Testcases;
+package com.POS.TestCases;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import com.POS.BaseClass.BaseClass;
-import com.POS.Utilities.ExcelRead;
 import com.POS.Utilities.Log;
 
 public class VerifyCategoryTest extends BaseClass {
@@ -46,12 +45,10 @@ public class VerifyCategoryTest extends BaseClass {
 		act.click1(objHome.menuCategory(), "Category Menu");
 		act.click1(objHome.menuCatPdt(), "Category Pdt");
 		act.click1(objCategory.btnAddCat(), "Add Category");
-		ExcelRead data = new ExcelRead();
 		ArrayList excelData = data.getData("Category");
 		act.type(objCategory.txtCatName(), (String) excelData.get(0));
 		act.click1(objCategory.btnSubmitAddCat(), "Add Category Submit");
 		Log.info("Catgeory Added");
-		act.fluentWait(getDriver(), objCategory.txtSearchCategory(), 5);
 		act.click1(objCategory.txtSearchCategory(), "Search Category");
 		act.type(objCategory.txtSearchCategory(), (String) excelData.get(0));
 		int tblRowCnt = act.getRowCount(objCategory.tblCategory());

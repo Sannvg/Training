@@ -1,5 +1,8 @@
 package com.POS.PageObjects;
 
+import java.time.Duration;
+import java.util.ArrayList;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7,45 +10,45 @@ import com.POS.BaseClass.BaseClass;
 
 public class StoreManage extends BaseClass {
 	@FindBy(css = ".fa.fa-plus")
-	WebElement btnAddZone;
+	private WebElement btnAddZone;
 	@FindBy(id = "ZonesName")
-	WebElement txtaddZoneName;
+	private WebElement txtaddZoneName;
 	@FindBy(xpath = "(//button[@type='submit'])[2]")
-	WebElement btnaddZoneSubmit;
+	private WebElement btnaddZoneSubmit;
 	@FindBy(xpath = "(//button[text()='Close'])[2]")
-	WebElement btnaddZoneClose;
+	private WebElement btnaddZoneClose;
 	@FindBy(css = ".fa.fa-pencil.editzone")
-	WebElement btnEditZone;
+	private WebElement btnEditZone;
 	@FindBy(css = "#ZoneName")
-	WebElement txtEditZoneName;
+	private WebElement txtEditZoneName;
 	@FindBy(xpath = "(//button[@type='submit'])[3]")
-	WebElement btnEditZoneSubmit;
+	private WebElement btnEditZoneSubmit;
 	@FindBy(xpath = "(//button[text()='Close'])[3]")
-	WebElement btnEditZoneClose;
+	private WebElement btnEditZoneClose;
 	@FindBy(xpath = "(//button[@type='submit'])[1]")
-	WebElement editStoreTblSubmit;
+	private WebElement editStoreTblSubmit;
 	@FindBy(xpath = "(//i[@class='fa fa-times deletezone'])[1]")
-	WebElement deleteZone;
+	private WebElement btndeleteZone;
 	@FindBy(xpath = "//button[@class='confirm']")
-	WebElement deleteZoneConfirm;
+	private WebElement btndltZoneConfirm;
 	@FindBy(xpath = "//button[@data-target='#Addtable']")
-	WebElement btnaddStoreTable;
+	private WebElement btnaddStoreTable;
 	@FindBy(css = "table[class='table table-striped table-bordered']")
-	WebElement tblStore;
+	private WebElement tblStore;
 	@FindBy(xpath = "//input[@id='TableName']")
-	WebElement txtAddStoreTblNm;
+	private WebElement txtAddStoreTblNm;
 	@FindBy(xpath = "//select[@id='Zones']")
-	WebElement drpAddStoreZone;
+	private WebElement drpAddStoreZone;
 	@FindBy(xpath = "(//button[@type='submit'])[1]")
-	WebElement btnAddStoreTblSubmit;
+	private WebElement btnAddStoreTblSubmit;
 	@FindBy(xpath = "(//button[text()='Close'])[1]")
-	WebElement btnAddStoreTblClose;
+	private WebElement btnAddStoreTblClose;
 	@FindBy(xpath = "//h2[text()='Store Zones']")
-	WebElement lblStoreZone;
+	private WebElement lblStoreZone;
 	@FindBy(xpath = "(//a[@data-original-title='Delete'])[1]")
-	WebElement storeTableDelete;
+	private WebElement btndltStrTbl;
 	@FindBy(xpath = "(//a[@data-original-title='Edit'])[1]")
-	WebElement storeTableEdit;
+	private WebElement btnStrTblEdit;
 
 	public StoreManage() {
 		PageFactory.initElements(getDriver(), this);
@@ -83,12 +86,12 @@ public class StoreManage extends BaseClass {
 		return btnEditZoneClose;
 	}
 
-	public WebElement deleteZone() {
-		return deleteZone;
+	public WebElement btndeleteZone() {
+		return btndeleteZone;
 	}
 
-	public WebElement deleteZoneConfirm() {
-		return deleteZoneConfirm;
+	public WebElement btndltZoneConfirm() {
+		return btndltZoneConfirm;
 	}
 
 	public WebElement btnaddStoreTable() {
@@ -119,23 +122,25 @@ public class StoreManage extends BaseClass {
 		return lblStoreZone;
 	}
 
-	public WebElement storeTableDelete() {
-		return storeTableDelete;
+	public WebElement btndltStrTbl() {
+		return btndltStrTbl;
 	}
 
-	public WebElement storeTableEdit() {
-		return storeTableEdit;
+	public WebElement btnStrTblEdit() {
+		return btnStrTblEdit;
 	}
 
 	public WebElement btnEditStoreTblSubmit() {
 		return editStoreTblSubmit;
 	}
 
-	public void beforefn() {
+	public void beforefn() throws Exception {
 		objLogin.loginFn();
 		act.click1(objStore.menuStore(), "Store Menu");
-		act.click1(objStore.searchStore(), "Search Store");
-		act.type(objStore.searchStore(), "OBS Store");
-		act.click1(objStore.manageStore(), "Manage Store ");
+		act.click1(objStore.txtSearchStore(), "Search Store");
+		ArrayList excelData = data.getData("EStore");
+		act.type(objStore.txtSearchStore(), (String) excelData.get(0));
+		act.explicitWait(getDriver(), objStore.btnmanageStore(), Duration.ofSeconds(10));
+		act.click1(objStore.btnmanageStore(), "Manage Store ");
 	}
 }

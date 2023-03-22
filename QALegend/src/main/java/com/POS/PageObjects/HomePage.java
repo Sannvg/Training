@@ -9,41 +9,43 @@ import com.POS.BaseClass.BaseClass;
 
 public class HomePage extends BaseClass {
 	@FindBy(css = "img[alt='logo']")
-	WebElement imgLogo;
+	private WebElement imgLogo;
 	@FindBy(xpath = "//ul[@class='nav navbar-nav']")
-	List<WebElement> listMenu;
+	private List<WebElement> listMenu;
+	@FindBy(xpath = "//button[@data-target='#bs-example-navbar-collapse-1']")
+	private WebElement btnMenu;
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/products']")
-	WebElement menuPdt;
+	private WebElement menuPdt;
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/stores']")
-	WebElement menuStore;
+	private WebElement menuStore;
 	@FindBy(xpath = "//i[@class='fa fa-users']")
-	WebElement menuPeople;
+	private WebElement menuPeople;
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/waiters']")
-	WebElement menuWaiter;
+	private WebElement menuWaiter;
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/suppliers']")
-	WebElement menuSupplier;
+	private WebElement menuSupplier;
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/customers']")
-	WebElement menuCustomer;
+	private WebElement menuCustomer;
 	@FindBy(xpath = "//i[@class='fa fa-bookmark']//following-sibling::span[1]")
-	WebElement menuCategory;
+	private WebElement menuCategory;
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/categories']")
-	WebElement menuCatPdt;
+	private WebElement menuCatPdt;
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/settings?tab=setting']")
-	WebElement menuSettings;
+	private WebElement menuSettings;
 	@FindBy(css = ".img-circle.topbar-userpic.hidden-xs")
-	WebElement imgLogin;
+	private WebElement imgLogin;
 	@FindBy(xpath = "//span[@class='hidden-xs'][1]")
-	WebElement lblLogin;
+	private WebElement lblLogin;
 	@FindBy(xpath = "//ul[@class='dropdown-menu']/li")
-	List<WebElement> languageList;
+	private List<WebElement> lstlanguage;
 	@FindBy(xpath = "(//span[@class='caret'])[3]")
-	WebElement drplanguage;
+	private WebElement drplanguage;
 	@FindBy(xpath = "//a[@title='Logout']//i")
-	WebElement btnLogout;
+	private WebElement btnLogout;
 	@FindBy(css = ".text-center.choose_store")
-	WebElement lblStore;
+	private WebElement lblStore;
 	@FindBy(xpath = "//ul[@id='storeline']")
-	WebElement listStore;
+	private WebElement listStore;
 
 	public HomePage() {
 		PageFactory.initElements(getDriver(), this);
@@ -55,6 +57,9 @@ public class HomePage extends BaseClass {
 
 	public List<WebElement> menuList() {
 		return listMenu;
+	}
+	public WebElement btnMenu() {
+		return btnMenu;
 	}
 
 	public WebElement menuPdt() {
@@ -101,8 +106,8 @@ public class HomePage extends BaseClass {
 		return lblLogin;
 	}
 
-	public List<WebElement> languageList() {
-		return languageList;
+	public List<WebElement> lstlanguage() {
+		return lstlanguage;
 	}
 
 	public WebElement languageSelected() {
@@ -122,7 +127,7 @@ public class HomePage extends BaseClass {
 	}
 
 	public void languageSelection(String language) {
-		List<WebElement> languagelist = languageList();
+		List<WebElement> languagelist = lstlanguage();
 		for (WebElement l : languagelist) {
 			if (l.getText().equalsIgnoreCase(language)) {
 				act.explicitWait(getDriver(), languageSelected(), Duration.ofSeconds(10));

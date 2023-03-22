@@ -8,58 +8,58 @@ import com.POS.BaseClass.BaseClass;
 
 public class Store extends BaseClass {
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/stores']")
-	WebElement menuStore;
+	private WebElement menuStore;
 	@FindBy(css = "select[name='Table_length']")
-	WebElement drpShowStore;
+	private WebElement drpShowStore;
 	@FindBy(css = "input[type='search']")
-	WebElement txtSearchStore;
+	private WebElement txtSearchStore;
 	@FindBy(css = "table[id='Table']")
-	WebElement tblStores;
+	private WebElement tblStores;
 	@FindBy(css = "table[id='Table']")
-	List<WebElement> listtblStores;
+	private List<WebElement> listtblStores;
 	@FindBy(xpath = "//table[@id='Table']//th")
-	List<WebElement> tblStoreHeaders;
+	private List<WebElement> tblStoreHeaders;
 	@FindBy(xpath = "//button[@data-target='#AddStore']")
-	WebElement bnAddStore;
+	private WebElement btnAddStore;
 	@FindBy(xpath = "//ul[@class='pagination']//li")
-	List<WebElement> tblPaginationStore;
+	private List<WebElement> tblPaginationStore;
 	@FindBy(css = "#Table_info")
-	WebElement lblTblInfo;
+	private WebElement lblTblInfo;
 	@FindBy(xpath = "//li[@class='paginate_button active']//a")
-	WebElement pageActive;
+	private WebElement pageActive;
 	@FindBy(xpath = "(//a[@data-original-title='Delete'])[1]")
-	WebElement deleteStore;
+	private WebElement btndeleteStore;
 	@FindBy(xpath = "(//a[@data-original-title='Edit'])[1]")
-	WebElement editStore;
+	private WebElement btneditStore;
 	@FindBy(xpath = "(//a[@data-original-title='manage Tables'])[1]")
-	WebElement manageStore;
+	private WebElement btnmanageStore;
 	@FindBy(xpath = "//th[@aria-sort='ascending']")
-	WebElement btnAscSort;
+	private WebElement btnAscSort;
 	@FindBy(xpath = "//th[@aria-sort='descending']")
-	WebElement btnDescSort;
+	private WebElement btnDescSort;
 	@FindBy(xpath = "//td[@class='sorting_1']")
-	WebElement firstelement;
+	private WebElement firstelement;
 	@FindBy(xpath = "//td[@class='dataTables_empty']")
-	WebElement noRecords;
+	private WebElement noRecords;
 	// Add Store
 	@FindBy(id = "StoreName")
-	WebElement txtStoreName;
+	private WebElement txtStoreName;
 	@FindBy(id = "email")
-	WebElement txtStoreEmail;
+	private WebElement txtStoreEmail;
 	@FindBy(id = "StorePhone")
-	WebElement txtStorePhone;
+	private WebElement txtStorePhone;
 	@FindBy(id = "Country")
-	WebElement txtStoreCountry;
+	private WebElement txtStoreCountry;
 	@FindBy(id = "City")
-	WebElement txtStoreCity;
+	private WebElement txtStoreCity;
 	@FindBy(id = "Adresse")
-	WebElement txtStoreAdresse;
+	private WebElement txtStoreAdresse;
 	@FindBy(id = "CustomeFooter")
-	WebElement txtStoreCustFooter;
+	private WebElement txtStoreCustFooter;
 	@FindBy(xpath = "//button[text()='Close']")
-	WebElement btnCloseAddStore;
+	private WebElement btnCloseAddStore;
 	@FindBy(xpath = "//button[text()='Submit']")
-	WebElement btnSubmitAddStore;
+	private WebElement btnSubmitAddStore;
 
 	public Store() {
 		PageFactory.initElements(getDriver(), this);
@@ -69,11 +69,11 @@ public class Store extends BaseClass {
 		return menuStore;
 	}
 
-	public WebElement showStore() {
+	public WebElement drpShowStore() {
 		return drpShowStore;
 	}
 
-	public WebElement searchStore() {
+	public WebElement txtSearchStore() {
 		return txtSearchStore;
 	}
 
@@ -89,11 +89,11 @@ public class Store extends BaseClass {
 		return tblStoreHeaders;
 	}
 
-	public WebElement addStore() {
-		return bnAddStore;
+	public WebElement btnAddStore() {
+		return btnAddStore;
 	}
 
-	public List<WebElement> pageIndexStore() {
+	public List<WebElement> tblPaginationStore() {
 		return tblPaginationStore;
 	}
 
@@ -106,16 +106,16 @@ public class Store extends BaseClass {
 	}
 
 	// ----
-	public WebElement deleteStore() {
-		return deleteStore;
+	public WebElement btndeleteStore() {
+		return btndeleteStore;
 	}
 
-	public WebElement editStore() {
-		return editStore;
+	public WebElement btneditStore() {
+		return btneditStore;
 	}
 
-	public WebElement manageStore() {
-		return manageStore;
+	public WebElement btnmanageStore() {
+		return btnmanageStore;
 	}
 
 	public WebElement btnAscSort() {

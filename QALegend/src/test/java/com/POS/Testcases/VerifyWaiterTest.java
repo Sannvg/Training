@@ -1,4 +1,4 @@
-package com.POS.Testcases;
+package com.POS.TestCases;
 
 import java.util.ArrayList;
 import org.testng.Assert;
@@ -12,7 +12,7 @@ public class VerifyWaiterTest extends BaseClass {
 	public void validateShowCount() {
 		Log.startTestCase("VerifyWaiterTest--validateShowCount");
 		objWaiter.beforefnWaiter();
-		act.selectByVisibleText("50", objWaiter.showWaiterFilter());
+		act.selectByVisibleText("50", objWaiter.drpShowWaiter());
 		Log.info("Selected show count");
 		int rwcount = act.getRowCount(objWaiter.tableWaiter());
 		Assert.assertEquals(rwcount, 50);
@@ -24,15 +24,14 @@ public class VerifyWaiterTest extends BaseClass {
 	public void validateAddWaiter() throws Exception {
 		Log.startTestCase("VerifyWaiterTest--validateAddWaiter");
 		objWaiter.beforefnWaiter();
-		act.click1(objWaiter.addWaiter(), "Add Waiter");
-		ExcelRead data = new ExcelRead();
-		ArrayList excelData = data.getData("Waiter");
-		act.type(objWaiter.waiterName(), (String) excelData.get(0));
-		act.type(objWaiter.waiterPhone(), (String) excelData.get(1));
-		act.type(objWaiter.waiterEmail(), (String) excelData.get(2));
-		act.type(objWaiter.waiterStore(), (String) excelData.get(3));
-		act.click1(objWaiter.waiterAddSubmit(), "Add Waiter Submit");
-		Assert.assertTrue(objWaiter.addWaiter().isDisplayed(), "Waiter is Added");
+		act.click1(objWaiter.btnAddWaiter(), "Add Waiter");
+		ArrayList excelData = data.getData("EWaiter");
+		act.type(objWaiter.txtWaiterName(), (String) excelData.get(0));
+		act.type(objWaiter.txtWaiterPhone(), (String) excelData.get(1));
+		act.type(objWaiter.txtWaiterEmail(), (String) excelData.get(2));
+		act.type(objWaiter.drpWaiterStore(), (String) excelData.get(3));
+		act.click1(objWaiter.btnSubmitAddWaiter(), "Add Waiter Submit");
+		Assert.assertTrue(objWaiter.btnAddWaiter().isDisplayed(), "Waiter is Added");
 		objHome.logOutFn();
 		Log.endTestCase("VerifyWaiterTest--validateAddWaiter");
 	}
@@ -41,8 +40,8 @@ public class VerifyWaiterTest extends BaseClass {
 	public void validateSearchWaiter() {
 		Log.startTestCase("VerifyWaiterTest--validateSearchWaiter");
 		objWaiter.beforefnWaiter();
-		Assert.assertTrue(objWaiter.addWaiter().isDisplayed());
-		act.type(objWaiter.searchWaiter(), "OBS");
+		Assert.assertTrue(objWaiter.btnAddWaiter().isDisplayed());
+		act.type(objWaiter.txtSearchWaiter(), "OBS");
 		Log.info("Search waiter entered");
 		int tblRowCnt = act.getRowCount(objWaiter.tableWaiter());
 		Assert.assertTrue(tblRowCnt > 0, "Searched Waiter is displayed");
@@ -51,18 +50,18 @@ public class VerifyWaiterTest extends BaseClass {
 	}
 
 	@Test(priority = 4)
-	public void validateEditWaiter() {
+	public void validateEditWaiter()  throws Exception  {
 		Log.startTestCase("VerifyWaiterTest--validateEditWaiter");
 		objWaiter.beforefnWaiter();
-		act.type(objWaiter.searchWaiter(), "OBS");
-		act.click1(objWaiter.editWaiter(), "Edit Waiter");
-		act.type(objEditPeople.txtEditWNm(), "OBS Waiter");
-		act.type(objEditPeople.txtEditWPhn(), "3434");
-		act.type(objEditPeople.txtEditWEm(), "obs@test");
+		act.type(objWaiter.txtSearchWaiter(), "OBS");
+		act.click1(objWaiter.btneditWaiter(), "Edit Waiter");
+		ArrayList excelData = data.getData("Waiter");
+		act.type(objEditPeople.txtEditWNm(), (String) excelData.get(0));
+		act.type(objEditPeople.txtEditWPhn(), (String) excelData.get(1));
+		act.type(objEditPeople.txtEditWEm(), (String) excelData.get(2));
 		act.click1(objEditPeople.btnEditWSubmit(), "Edit Waiter Submit");
-		act.click1(objWaiter.searchWaiter(), "Search Waiter");
-		act.type(objWaiter.searchWaiter(), "OBS");
-		act.fluentWait(getDriver(), objWaiter.tableWaiter(), 5);
+		act.click1(objWaiter.txtSearchWaiter(), "Search Waiter");
+		act.type(objWaiter.txtSearchWaiter(), (String) excelData.get(0));		
 		int tblRowCnt = act.getRowCount(objWaiter.tableWaiter());
 		Assert.assertTrue(tblRowCnt > 0, "Waiter is edited");
 		objHome.logOutFn();
@@ -70,3 +69,4 @@ public class VerifyWaiterTest extends BaseClass {
 	}
 
 }
+

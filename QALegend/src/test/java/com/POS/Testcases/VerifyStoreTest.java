@@ -1,6 +1,5 @@
-package com.POS.Testcases;
+package com.POS.TestCases;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.WebElement;
@@ -18,7 +17,7 @@ public class VerifyStoreTest extends BaseClass {
 		Log.startTestCase("VerifyStoreTest--validateShowCount");
 		objLogin.loginFn();
 		act.click1(objHome.menuStore(), "Store Menu");
-		act.selectByVisibleText("50", objStore.showStore());
+		act.selectByVisibleText("50", objStore.drpShowStore());
 		int rwcount = act.getRowCount(objStore.tableStore());
 		SoftAssert sasst = new SoftAssert();
 		sasst.assertEquals(rwcount, 50);
@@ -62,8 +61,7 @@ public class VerifyStoreTest extends BaseClass {
 		Log.startTestCase("VerifyStoreTest--validateAddStore");
 		objLogin.loginFn();
 		act.click1(objHome.menuStore(), "Store Menu");
-		act.click1(objStore.addStore(), "Add Store");
-		ExcelRead data = new ExcelRead();
+		act.click1(objStore.btnAddStore(), "Add Store");
 		ArrayList excelData = data.getData("Store");
 		act.type(objStore.storeName(), (String) excelData.get(0));
 		act.type(objStore.storeEmail(), (String) excelData.get(1));
@@ -74,9 +72,9 @@ public class VerifyStoreTest extends BaseClass {
 		act.type(objStore.storeCustFooter(), (String) excelData.get(6));
 		act.click1(objStore.storeAddSubmit(), "Add Store Submit");
 		Log.info("Add Store Details entered");
-		act.fluentWait(getDriver(), objStore.searchStore(), 5);
-		act.click1(objStore.searchStore(), "Search Added Product");
-		act.type(objStore.searchStore(), (String) excelData.get(0));
+		act.fluentWait(getDriver(), objStore.txtSearchStore(), 5);
+		act.click1(objStore.txtSearchStore(), "Search Added Product");
+		act.type(objStore.txtSearchStore(), (String) excelData.get(0));
 		int tblRowCnt = act.getRowCount(objStore.tableStore());
 		Assert.assertTrue(tblRowCnt > 0, "Store Added");
 		objHome.logOutFn();
@@ -88,9 +86,9 @@ public class VerifyStoreTest extends BaseClass {
 		Log.startTestCase("VerifyStoreTest--validateSearchStore");
 		objLogin.loginFn();
 		act.click1(objHome.menuStore(), "Store Menu");
-		act.click1(objStore.searchStore(), "Search Store");
+		act.click1(objStore.txtSearchStore(), "Search Store");
 		Log.info("Search Store Details entered");
-		act.type(objStore.searchStore(), "Test OBS Store");
+		act.type(objStore.txtSearchStore(), "Test OBS Store");
 		act.fluentWait(getDriver(), objStore.tableStore(), 5);
 		int tblRowCnt = act.getRowCount(objStore.tableStore());
 		Assert.assertTrue(tblRowCnt > 0, "Search Store is displayed");
@@ -99,23 +97,21 @@ public class VerifyStoreTest extends BaseClass {
 	}
 
 	@Test(priority = 4)
-	public void validateEditStore() {
+	public void validateEditStore() throws Exception {
 		Log.startTestCase("VerifyStoreTest--validateEditStore");
 		objLogin.loginFn();
 		act.click1(objHome.menuStore(), "Store Menu");
-		act.click1(objStore.searchStore(), "Search Store");
-		act.type(objStore.searchStore(), "Test OBS Store");
-		act.fluentWait(getDriver(), objStore.tableStore(), 10);
+		act.click1(objStore.txtSearchStore(), "Search Store");
+		act.type(objStore.txtSearchStore(), "Test OBS Store");	
 		Log.info("Clicked on Edit Store");
-		act.click1(objStore.editStore(), "Edit Store");
-		act.type(objStore.storeName(), "OBS Store");
-		act.type(objStore.storePhone(), "123123");
+		act.click1(objStore.btneditStore(), "Edit Store");
+		ArrayList excelData = data.getData("EStore");
+		act.type(objStore.storeName(), (String) excelData.get(0));
+		act.type(objStore.storePhone(), (String) excelData.get(1));
 		Log.info("Edit Store Details entered");
-		act.click1(objStore.storeAddSubmit(), "Edit Store Submit");
-		act.explicitWait(getDriver(), objStore.showStore(), Duration.ofSeconds(10));
-		act.click1(objStore.searchStore(), "Search Store");
-		act.type(objStore.searchStore(), "OBS Store");
-		act.fluentWait(getDriver(), objStore.tableStore(), 5);
+		act.click1(objStore.storeAddSubmit(), "Edit Store Submit");		
+		act.click1(objStore.txtSearchStore(), "Search Store");
+		act.type(objStore.txtSearchStore(),(String) excelData.get(0));
 		Assert.assertTrue(objStore.firstElement().isDisplayed(), "Store is Updated");
 		objHome.logOutFn();
 		Log.endTestCase("VerifyStoreTest--validateEditStore");
@@ -142,3 +138,4 @@ public class VerifyStoreTest extends BaseClass {
 		Log.endTestCase("VerifyStoreTest--validateStoreSorting");
 	}
 }
+

@@ -7,221 +7,220 @@ import com.POS.BaseClass.BaseClass;
 
 public class AddProduct extends BaseClass {
 	@FindBy(id = "Type")
-	WebElement drpPdtType;
+	private WebElement drpPdtType;
 	@FindBy(id = "ProductCode")
-	WebElement txtPdtCode;
+	private WebElement txtPdtCode;
 	@FindBy(id = "ProductName")
-	WebElement txtPdtName;
+	private WebElement txtPdtName;
 	@FindBy(id = "Category")
-	WebElement drpCategory;
+	private WebElement drpCategory;
 	@FindBy(id = "Supplier")
-	WebElement drpSupplier;
+	private WebElement drpSupplier;
 	@FindBy(id = "PurchasePrice")
-	WebElement drpPurchasePrice;
+	private WebElement drpPurchasePrice;
 	@FindBy(id = "Tax")
-	WebElement txtTax;
+	private WebElement txtTax;
 	@FindBy(id = "taxType")
-	WebElement drpTaxType;
+	private WebElement drpTaxType;
 	@FindBy(id = "Price")
-	WebElement drpPrice;
+	private WebElement drpPrice;
 	@FindBy(id = "Unit")
-	WebElement txtUnit;
+	private WebElement txtUnit;
 	@FindBy(id = "AlertQt")
-	WebElement drpAlertQT;
+	private WebElement drpAlertQT;
 	@FindBy(id = "ProductOptions")
-	WebElement txtPdtOptions;
+	private WebElement txtPdtOptions;
 	@FindBy(id = "ImageInput")
-	WebElement filePdtImg;
+	private WebElement btnPdtImg;
 	@FindBy(css = ".note-editable.panel-body")
-	WebElement txtPdtDesc;
+	private WebElement txtPdtDesc;
 	// Product Description
 	@FindBy(css = "button[data-original-title='Bold (CTRL+B)']")
-	WebElement btnPdtDescBold;
+	private WebElement btnPdtDescBold;
 	@FindBy(css = "button[data-original-title='Italic (CTRL+I)']")
-	WebElement btnPdtDescItalic;
+	private WebElement btnPdtDescItalic;
 	@FindBy(css = "button[data-original-title='Underline (CTRL+U)']")
-	WebElement btnPdtDescUnderline;
+	private WebElement btnPdtDescUnderline;
 	@FindBy(css = "button[data-original-title='Remove Font Style (CTRL+\\)']")
-	WebElement btnPdtDescRemoveFS;
+	private WebElement btnPdtDescRemoveFS;
 	@FindBy(css = "button[data-original-title='Font Size']")
-	WebElement btnPdtDescFontS;
+	private WebElement btnPdtDescFontS;
 	@FindBy(css = "button[data-original-title='Recent Color']")
-	WebElement btnPdtDescRClr;
+	private WebElement btnPdtDescRClr;
 	@FindBy(css = "button[data-original-title='More Color']")
-	WebElement btnPdtDescMClr;
+	private WebElement btnPdtDescMClr;
 	@FindBy(css = "button[data-original-title='Unordered list (CTRL+SHIFT+NUM7)']")
-	WebElement btnPdtDescUL;
+	private WebElement btnPdtDescUL;
 	@FindBy(css = "button[data-original-title='Ordered list (CTRL+SHIFT+NUM8)']")
-	WebElement btnPdtDescOL;
+	private WebElement btnPdtDescOL;
 	@FindBy(css = "button[data-original-title='Paragraph']")
-	WebElement btnPdtDescPara;
+	private WebElement btnPdtDescPara;
 	@FindBy(css = "button[data-original-title='Line Height']")
-	WebElement btnPdtDescLH;
-
+	private WebElement btnPdtDescLH;
 	// Display Color
 	@FindBy(id = "option1")
-	WebElement rbtnClr1;
+	private WebElement rbtnClr1;
 	@FindBy(id = "option2")
-	WebElement rbtnClr2;
+	private WebElement rbtnClr2;
 	@FindBy(id = "option3")
-	WebElement rbtnClr3;
+	private WebElement rbtnClr3;
 	@FindBy(id = "option4")
-	WebElement rbtnClr4;
+	private WebElement rbtnClr4;
 	@FindBy(id = "option5")
-	WebElement rbtnClr5;
+	private WebElement rbtnClr5;
 	@FindBy(id = "option6")
-	WebElement rbtnClr6;
+	private WebElement rbtnClr6;
 	@FindBy(id = "option7")
-	WebElement rbtnClr7;
+	private WebElement rbtnClr7;
 	@FindBy(id = "option8")
-	WebElement rbtnClr8;
+	private WebElement rbtnClr8;
 
 	@FindBy(xpath = "(//button[@data-dismiss='modal' and text()='Close'])[2]")
-	WebElement btnPdtClose;
+	private WebElement btnPdtClose;
 	@FindBy(xpath = "(//button[@type='submit'])[2]")
-	WebElement btnPdtSubmit;
+	private WebElement btnPdtSubmit;
 
 	public AddProduct() {
 		PageFactory.initElements(getDriver(), this);
 	}
 
-	public WebElement pdtType() {
+	public WebElement drpPdtType() {
 		return drpPdtType;
 	}
 
-	public WebElement pdtCode() {
+	public WebElement txtPdtCode() {
 		return txtPdtCode;
 	}
 
-	public WebElement pdtName() {
+	public WebElement txtPdtName() {
 		return txtPdtName;
 	}
 
-	public WebElement pdtCategory() {
+	public WebElement drpCategory() {
 		return drpCategory;
 	}
 
-	public WebElement pdtSupplier() {
+	public WebElement drpSupplier() {
 		return drpSupplier;
 	}
 
-	public WebElement pdtPurchasePrice() {
+	public WebElement drpPurchasePrice() {
 		return drpPurchasePrice;
 	}
 
-	public WebElement pdtTax() {
+	public WebElement txtTax() {
 		return txtTax;
 	}
 
-	public WebElement pdtTaxType() {
+	public WebElement drpTaxType() {
 		return drpTaxType;
 	}
 
-	public WebElement pdtPrice() {
+	public WebElement drpPrice() {
 		return drpPrice;
 	}
 
-	public WebElement pdtUnit() {
+	public WebElement txtUnit() {
 		return txtUnit;
 	}
 
-	public WebElement pdtAlertqty() {
+	public WebElement drpAlertQT() {
 		return drpAlertQT;
 	}
 
-	public WebElement pdtOptions() {
+	public WebElement txtPdtOptions() {
 		return txtPdtOptions;
 	}
 
 	public WebElement pdtImageInput() {
-		return filePdtImg;
+		return btnPdtImg;
 	}
 
-	public WebElement pdtDescription() {
+	public WebElement txtPdtDesc() {
 		return txtPdtDesc;
 	}
 
-	public WebElement pdtDescBold() {
+	public WebElement btnPdtDescBold() {
 		return btnPdtDescBold;
 	}
 
-	public WebElement pdtDescItalic() {
+	public WebElement btnPdtDescItalic() {
 		return btnPdtDescItalic;
 	}
 
-	public WebElement pdtDescUnderline() {
+	public WebElement btnPdtDescUnderline() {
 		return btnPdtDescUnderline;
 	}
 
-	public WebElement pdtDescRemoveFS() {
+	public WebElement btnPdtDescRemoveFS() {
 		return btnPdtDescRemoveFS;
 	}
 
-	public WebElement pdtDescFontS() {
+	public WebElement btnPdtDescFontS() {
 		return btnPdtDescFontS;
 	}
 
-	public WebElement pdtDescRClr() {
+	public WebElement btnPdtDescRClr() {
 		return btnPdtDescRClr;
 	}
 
-	public WebElement pdtDescMClr() {
+	public WebElement btnPdtDescMClr() {
 		return btnPdtDescMClr;
 	}
 
-	public WebElement pdtDescUList() {
+	public WebElement btnPdtDescUL() {
 		return btnPdtDescUL;
 	}
 
-	public WebElement pdtDescOList() {
+	public WebElement btnPdtDescOL() {
 		return btnPdtDescOL;
 	}
 
-	public WebElement pdtDescPara() {
+	public WebElement btnPdtDescPara() {
 		return btnPdtDescPara;
 	}
 
-	public WebElement pdtDescLineHt() {
+	public WebElement btnPdtDescLH() {
 		return btnPdtDescLH;
 	}
 
-	public WebElement pdtDescClr1() {
+	public WebElement rbtnClr1() {
 		return rbtnClr1;
 	}
 
-	public WebElement pdtDescClr2() {
+	public WebElement rbtnClr2() {
 		return rbtnClr2;
 	}
 
-	public WebElement pdtDescClr3() {
+	public WebElement rbtnClr3() {
 		return rbtnClr3;
 	}
 
-	public WebElement pdtDescClr4() {
+	public WebElement rbtnClr4() {
 		return rbtnClr4;
 	}
 
-	public WebElement pdtDescClr5() {
+	public WebElement rbtnClr5() {
 		return rbtnClr5;
 	}
 
-	public WebElement pdtDescClr6() {
+	public WebElement rbtnClr6() {
 		return rbtnClr6;
 	}
 
-	public WebElement pdtDescClr7() {
+	public WebElement rbtnClr7() {
 		return rbtnClr7;
 	}
 
-	public WebElement pdtDescClr8() {
+	public WebElement rbtnClr8() {
 		return rbtnClr8;
 	}
 
-	public WebElement addPdtClose() {
+	public WebElement btnPdtClose() {
 		return btnPdtClose;
 	}
 
-	public WebElement addPdtSubmit() {
+	public WebElement btnPdtSubmit() {
 		return btnPdtSubmit;
 	}
 

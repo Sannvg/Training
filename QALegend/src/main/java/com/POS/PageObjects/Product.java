@@ -8,49 +8,49 @@ import com.POS.BaseClass.BaseClass;
 
 public class Product extends BaseClass {
 	@FindBy(xpath = "//a[@href='https://qalegend.com/restaurant/products']")
-	WebElement menuPdt;
+	private WebElement menuPdt;
 	@FindBy(css = "select[name='Table_length']")
-	WebElement drpShowProduct;
+	private WebElement drpShowProduct;
 	@FindBy(css = "#Table_info")
-	WebElement lbltblrows;
+	private WebElement lbltblrows;
 	@FindBy(css = "select[name='filtersupp']")
-	WebElement drpFilterSupplier;
+	private WebElement drpFilterSupplier;
 	@FindBy(css = "Select[name='filtertype']")
-	WebElement drpFilterPdtType;
+	private WebElement drpFilterPdtType;
 	@FindBy(xpath = "//button[text()='Apply Filter']")
-	WebElement btnApplyFilter;
+	private WebElement btnApplyFilter;
 	@FindBy(css = "input[type='search']")
-	WebElement txtSearchPdt;
+	private WebElement txtSearchPdt;
 	@FindBy(css = "table[id='Table']")
-	List<WebElement> lsttblPdts;
+	private List<WebElement> lsttblPdts;
 	@FindBy(css = "table[id='Table']")
-	WebElement tblProduct;
+	private WebElement tblProduct;
 	@FindBy(xpath = "//button[@data-target='#Addproduct']")
-	WebElement bnAddPdt;
+	private WebElement btnAddPdt;
 	@FindBy(linkText = "Download CSV")
-	WebElement lnkDownload;
+	private WebElement lnkDownload;
 	@FindBy(css = "a[data-target='#ImportProducts']")
-	WebElement lnkUpload;
+	private WebElement lnkUpload;
 	@FindBy(css = "a[data-target='#PrintMenu']")
-	WebElement lnkPrintMenu;
+	private WebElement lnkPrintMenu;
 	@FindBy(className = "pagination")
-	WebElement tblPaginationPdt;
+	private WebElement tblPaginationPdt;
 
 	// Upload File Window
 	@FindBy(xpath = "(//input[@id='ImageInput'])[2]")
-	WebElement btnUploadfile;
+	private WebElement btnUploadfile;
 	@FindBy(linkText = "Download Sample")
-	WebElement linkDownload;
+	private WebElement linkDownload;
 	@FindBy(xpath = "(//button[@data-dismiss='modal' and text()='Close'])[2]")
-	WebElement btnUFClose;
+	private WebElement btnUFClose;
 	@FindBy(xpath = "(//button[@type='submit'])[3]")
-	WebElement btnUFSubmit;
+	private WebElement btnUFSubmit;
 
 	// Print Menu
 	@FindBy(xpath = "//button[@onclick='PrintTicket()']/preceding-sibling::button")
-	WebElement btnPrintMenuClose;
+	private WebElement btnPrintMenuClose;
 	@FindBy(xpath = "//button[@onclick='PrintTicket()']")
-	WebElement btnPrintMenu;
+	private WebElement btnPrintMenu;
 
 	public Product() {
 		PageFactory.initElements(getDriver(), this);
@@ -60,7 +60,7 @@ public class Product extends BaseClass {
 		return menuPdt;
 	}
 
-	public WebElement showProduct() {
+	public WebElement drpShowProduct() {
 		return drpShowProduct;
 	}
 
@@ -68,19 +68,19 @@ public class Product extends BaseClass {
 		return lbltblrows;
 	}
 
-	public WebElement supplierFilter() {
+	public WebElement drpFilterSupplier() {
 		return drpFilterSupplier;
 	}
 
-	public WebElement pdtTypeFilter() {
+	public WebElement drpFilterPdtType() {
 		return drpFilterPdtType;
 	}
 
-	public WebElement applyFilter() {
+	public WebElement btnApplyFilter() {
 		return btnApplyFilter;
 	}
 
-	public WebElement searchPdt() {
+	public WebElement txtSearchPdt() {
 		return txtSearchPdt;
 	}
 
@@ -92,47 +92,47 @@ public class Product extends BaseClass {
 		return tblProduct;
 	}
 
-	public WebElement addPdt() {
-		return bnAddPdt;
+	public WebElement btnAddPdt() {
+		return btnAddPdt;
 	}
 
-	public WebElement downloadFile() {
+	public WebElement lnkDownload() {
 		return lnkDownload;
 	}
 
-	public WebElement uploadFile() {
+	public WebElement lnkUpload() {
 		return lnkUpload;
 	}
 
-	public WebElement printMenu() {
+	public WebElement lnkPrintMenu() {
 		return lnkPrintMenu;
 	}
 
-	public WebElement pageIndexPdt() {
+	public WebElement tblPaginationPdt() {
 		return tblPaginationPdt;
 	}
 
-	public WebElement uploadImageFile() {
+	public WebElement btnUploadfile() {
 		return btnUploadfile;
 	}
 
-	public WebElement downloadSample() {
+	public WebElement linkDownload() {
 		return linkDownload;
 	}
 
-	public WebElement uploadFileClose() {
+	public WebElement btnUFClose() {
 		return btnUFClose;
 	}
 
-	public WebElement uploadFileSubmit() {
+	public WebElement btnUFSubmit() {
 		return btnUFSubmit;
 	}
 
-	public WebElement printMenuClose() {
+	public WebElement btnPrintMenuClose() {
 		return btnPrintMenuClose;
 	}
 
-	public WebElement menuPrint() {
+	public WebElement btnPrintMenu() {
 		return btnPrintMenu;
 	}
 

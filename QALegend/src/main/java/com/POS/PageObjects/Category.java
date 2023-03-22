@@ -10,42 +10,42 @@ import com.POS.BaseClass.BaseClass;
 
 public class Category extends BaseClass {
 	@FindBy(css = "select[name='Table_length']")
-	WebElement drpShowCategory;
+	private WebElement drpShowCategory;
 	@FindBy(css = "input[type='search']")
-	WebElement txtSearchCategory;
+	private WebElement txtSearchCategory;
 	@FindBy(css = "table[id='Table']")
-	WebElement tblCategory;
+	private WebElement tblCategory;
 	@FindBy(css = "table[id='Table']")
-	List<WebElement> listtblCategory;
+	private List<WebElement> listtblCategory;
 	@FindBy(xpath = "//table[@id='Table']//th")
-	List<WebElement> tblCatHeaders;
+	private List<WebElement> tblCatHeaders;
 	@FindBy(xpath = "//button[@data-target='#Addcategory']")
-	WebElement btnAddCat;
+	private WebElement btnAddCat;
 	@FindBy(xpath = "//ul[@class='pagination']//li")
-	List<WebElement> tblPaginationCat;
+	private List<WebElement> tblPaginationCat;
 	@FindBy(css = "#Table_info")
-	WebElement lblTblInfo;
+	private WebElement lblTblInfo;
 	@FindBy(xpath = "//li[@class='paginate_button active']//a")
-	WebElement pageActive;
+	private WebElement pageActive;
 	@FindBy(xpath = "(//a[@data-original-title='Delete'])[1]")
-	WebElement deleteCat;
+	private WebElement deleteCat;
 	@FindBy(xpath = "(//a[@data-original-title='Edit'])[1]")
-	WebElement editCat;
+	private WebElement editCat;
 	@FindBy(xpath = "//th[@aria-sort='ascending']")
-	WebElement ascendingCat;
+	private WebElement btnascendingCat;
 	@FindBy(xpath = "//th[@aria-sort='descending']")
-	WebElement descendingCat;
+	private WebElement btndescendingCat;
 	@FindBy(xpath = "//td[@class='sorting_1']")
-	WebElement firstelement;
+	private WebElement firstelement;
 	@FindBy(xpath = "//td[@class='dataTables_empty']")
-	WebElement noRecords;
+	private WebElement noRecords;
 	// Add Category
 	@FindBy(id = "CategoryName")
-	WebElement txtCatName;
+	private WebElement txtCatName;
 	@FindBy(xpath = "//button[text()='Close']")
-	WebElement btnCloseAddCat;
+	private WebElement btnCloseAddCat;
 	@FindBy(xpath = "//button[text()='Submit']")
-	WebElement btnSubmitAddCat;
+	private WebElement btnSubmitAddCat;
 
 	public Category() {
 		PageFactory.initElements(getDriver(), this);
@@ -60,6 +60,7 @@ public class Category extends BaseClass {
 	}
 
 	public WebElement tblCategory() {
+		act.fluentWait(getDriver(), tblCategory, 5);
 		return tblCategory;
 	}
 
@@ -71,12 +72,12 @@ public class Category extends BaseClass {
 		return tblCatHeaders;
 	}
 
-	public WebElement ascendingCat() {
-		return ascendingCat;
+	public WebElement btnascendingCat() {
+		return btnascendingCat;
 	}
 
-	public WebElement descendingCat() {
-		return descendingCat;
+	public WebElement btndescendingCat() {
+		return btndescendingCat;
 	}
 
 	public WebElement btnAddCat() {

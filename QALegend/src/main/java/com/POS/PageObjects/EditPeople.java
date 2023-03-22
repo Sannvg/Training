@@ -9,17 +9,17 @@ import com.POS.BaseClass.BaseClass;
 public class EditPeople extends BaseClass {
 	// Waiter
 	@FindBy(css = "input[id='WaiterName']")
-	WebElement txtEditWNm;
+	private WebElement txtEditWNm;
 	@FindBy(css = "input[id='WaiterPhone']")
-	WebElement txtEditWPhn;
+	private WebElement txtEditWPhn;
 	@FindBy(css = "input[id='WaiterEmail']")
-	WebElement txtEditWEm;
+	private WebElement txtEditWEm;
 	@FindBy(css = "select[id='WaiterStore']")
-	WebElement drpEditWStore;
+	private WebElement drpEditWStore;
 	@FindBy(css = "button[class='btn btn-add']")
-	WebElement btnEditWSubmit;
+	private WebElement btnEditWSubmit;
 	@FindBy(xpath = ".fa.fa-arrow-left")
-	WebElement btnEditWBk;
+	private WebElement btnEditWBk;
 
 	public EditPeople() {
 		PageFactory.initElements(getDriver(), this);

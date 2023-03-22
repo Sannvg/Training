@@ -8,35 +8,35 @@ import com.POS.BaseClass.BaseClass;
 
 public class Settings extends BaseClass {
 	@FindBy(xpath = "//a[@href='#users']")
-	WebElement btnUsers;
+	private WebElement btnUsers;
 	@FindBy(css = "button[data-target='#AddUser']")
-	WebElement btnAddUser;
+	private WebElement btnAddUser;
 	@FindBy(id = "username")
-	WebElement txtUserName;
+	private WebElement txtUserName;
 	@FindBy(id = "firstname")
-	WebElement txtFirstNm;
+	private WebElement txtFirstNm;
 	@FindBy(id = "lastname")
-	WebElement txtLastNm;
+	private WebElement txtLastNm;
 	@FindBy(css = "input[value='admin']")
-	WebElement rbtnAdmin;
+	private WebElement rbtnAdmin;
 	@FindBy(css = "input[value='sales']")
-	WebElement rbtnSales;
+	private WebElement rbtnSales;
 	@FindBy(css = "input[value='waiter']")
-	WebElement rbtnWaiter;
+	private WebElement rbtnWaiter;
 	@FindBy(css = "input[value='kitchen']")
-	WebElement rbtnKitchen;
+	private WebElement rbtnKitchen;
 	@FindBy(id = "email")
-	WebElement txtEmail;
+	private WebElement txtEmail;
 	@FindBy(id = "password")
-	WebElement txtPassword;
+	private WebElement txtPassword;
 	@FindBy(id = "confirm_password")
-	WebElement txtCPassword;
+	private WebElement txtCPassword;
 	@FindBy(id = "Avatar")
-	WebElement btnInputFile;
+	private WebElement btnInputFile;
 	@FindBy(xpath = "(//button[@type='submit'])[2]")
-	WebElement btnSubmit;
+	private WebElement btnSubmit;
 	@FindBy(xpath = "(//button[text()='Close'])[1]")
-	WebElement btnClose;
+	private WebElement btnClose;
 
 	public Settings() {
 		PageFactory.initElements(getDriver(), this);

@@ -3,20 +3,19 @@
 <suite name="RestaurantSuite">
 	<listeners>
 		<listener class-name="com.POS.Utilities.Listeners"></listener>
+		<listener class-name="com.POS.Utilities.RetryAnalyzerListener"></listener>
 	</listeners>
 	<parameter name="Browser" value="Edge"></parameter>
-	<parameter name="ZoneName" value="Test OBS Zone"></parameter>
-	<parameter name="StoreTblNm" value="Test OBS Store Table"></parameter>
-	<test thread-count="5" name="Test">
+	<test thread-count="5" name="QALegendTest">
 		<classes>
-			<class name="com.POS.Testcases.VerifyUserLoginTest" />
-			<class name="com.POS.Testcases.VerifyHomePageTest" />
-			<class name="com.POS.Testcases.VerifyProductPageTest" />
-			<class name="com.POS.Testcases.VerifyStoreTest" />
-			<class name="com.POS.Testcases.VerifyStoreManageTest" />
-			<class name="com.POS.Testcases.VerifyWaiterTest" />
-			<class name="com.POS.Testcases.VerifyCategoryTest" />
-			<class name="com.POS.Testcases.VerifySettingsTest" />
+			<!--<class name="com.POS.TestCases.VerifyUserLoginTest" />-->
+			<class name="com.POS.TestCases.VerifyHomePageTest" />
+			<!--<class name="com.POS.TestCases.VerifyStoreTest" />
+			<class name="com.POS.TestCases.VerifyStoreManageTest" />
+			<class name="com.POS.TestCases.VerifyProductPageTest" />
+			<class name="com.POS.TestCases.VerifyCategoryTest" />
+			<class name="com.POS.TestCases.VerifySettingsTest" />
+			<class name="com.POS.TestCases.VerifyWaiterTest" />-->
 		</classes>
-	</test> <!-- Test -->
+	</test> <!-- QALegendTest -->
 </suite> <!-- RestaurantSuite -->

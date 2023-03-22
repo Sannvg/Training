@@ -8,15 +8,15 @@ import com.POS.BaseClass.BaseClass;
 
 public class Login extends BaseClass {
 	@FindBy(css = "img[alt='logo']")
-	WebElement Logo;
+	private WebElement Logo;
 	@FindBy(xpath = "//h1[text()='Login']")
-	WebElement lblLogin;
+	private WebElement lblLogin;
 	@FindBy(css = "input[name='username']")
-	WebElement txtUsername;
+	private WebElement txtUsername;
 	@FindBy(css = "input[name='password']")
-	WebElement txtPswrd;
+	private WebElement txtPswrd;
 	@FindBy(css = "input[name='submit']")
-	WebElement btnLogin;
+	private WebElement btnLogin;
 
 	public Login() {
 		PageFactory.initElements(getDriver(), this);
@@ -26,24 +26,23 @@ public class Login extends BaseClass {
 		return Logo;
 	}
 
-	public WebElement dispLogin() {
+	public WebElement lblLogin() {
+		act.explicitWait(getDriver(), lblLogin, Duration.ofSeconds(10));
 		return lblLogin;
 	}
 
-	public WebElement userName() {
+	public WebElement txtUsername() {
 		return txtUsername;
 	}
 
-	public WebElement password() {
+	public WebElement txtPswrd() {
 		return txtPswrd;
 	}
 
-	public WebElement loginBtn() {
+	public WebElement btnLogin() {
 		return btnLogin;
 	}
 
-	// Method to check whether the Login page is loaded- If present will get True
-	// else will get False
 	public Boolean isLogoPresent() {
 		return act.isDisplayed(getDriver(), Logo);
 	}
@@ -51,7 +50,6 @@ public class Login extends BaseClass {
 	public void loginFn() {
 		act.type(txtUsername, prop.getProperty("Username"));
 		act.type(txtPswrd, prop.getProperty("Password"));
-		act.explicitWait(getDriver(), btnLogin, Duration.ofSeconds(10));
 		act.click1(btnLogin, "Login Button");
 	}
 
